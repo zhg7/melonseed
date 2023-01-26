@@ -1,0 +1,23 @@
+[
+    {
+        "name" : "Manzana",
+        "price" : 1.79,
+        "weight" : 180,
+        "origin": "España",
+        "image" : "apples.jpg"
+    },
+    {
+        "name" : "Aguacate",
+        "price" : 2.99,
+        "weight" : 200,
+        "origin": "España",
+        "image" : "avocados.jpg"
+    },
+    {
+        "name" : "Plátano",
+        "price" : 2.15,
+        "weight" : 120,
+        "origin": "España",
+        "image" : "avocados.jpg"
+    }
+]
