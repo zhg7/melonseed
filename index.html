@@ -14,18 +14,18 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/app/styles/index.css">
+    <link rel="stylesheet" href="/app/styles/main.css">
     <script src="app/scripts/catalog.js" defer></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="/app/assets/images/logo/melon.svg" alt="Logo" width="48" class="mb-3">
-                <span class="fs-3">Melonseed</span>
+                <span class="fs-1 text-light">Melonseed</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,13 +33,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link text-light" href="#">Catálogo</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar sesión</a>
+                    <li class="nav-item text-light">
+                        <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar
+                            sesión</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -49,7 +47,10 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <header class="container-fluid">
+        DSSDSDSDS
+    </header>
+    <div class="container-fluid content p-4">
         <h1>Destacados</h1>
         <div class="row">
             <div class="col-md-6">
@@ -143,68 +144,64 @@
 
         </div>
     </div>
-    <footer class="text-center text-lg-start bg-light text-muted">
-        <!-- Section: Social media -->
+    <footer class="text-center text-lg-start text-light">
 
-        <!-- Section: Links  -->
-
-        <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Acerca de
-                    </h6>
-                    <p>
-                        Melonseed es una tienda dedicada a la venta de una gran variedad de frutas.
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Enlaces de interés
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Aviso legal</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Política de privacidad</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Términos de uso</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Condiciones de venta</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                    <p><i class="bi bi-shop"></i> C/ Manuel Iradier 73, 03812, Alicante</p>
-                    <p>
-                        <i class="bi bi-envelope"></i>
-                        ayuda@melon.seed
-                    </p>
-                    <p><i class="bi bi-telephone-fill"></i> 778 537 972</p>
-                </div>
-                <!-- Grid column -->
+        <!-- Grid row -->
+        <div class="row mt-0 p-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h5 class="text-uppercase fw-bold mb-4">
+                    Acerca de
+                </h5>
+                <p>
+                    Melonseed es una tienda dedicada a la venta de una gran variedad de frutas.
+                </p>
             </div>
-            <!-- Grid row -->
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h5 class="text-uppercase fw-bold mb-4">
+                    Enlaces de interés
+                </h5>
+                <p>
+                    <i class="bi bi-flag-fill"> </i><a href="#!" class="text-reset">Aviso legal</a>
+                </p>
+                <p>
+                    <i class="bi bi-shield-lock-fill"> </i><a href="#!" class="text-reset">Política de privacidad</a>
+                </p>
+                <p>
+                    <i class="bi bi-file-text-fill"> </i><a href="#!" class="text-reset">Términos de uso</a>
+                </p>
+                <p>
+                    <i class="bi bi-bag-fill"></i> <a href="#!" class="text-reset">Condiciones de venta</a>
+                </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h5 class="text-uppercase fw-bold mb-4">Contacto</h5>
+                <p><i class="bi bi-geo-alt-fill"></i> 44°14'39.0"N 7°46'10.0"E</p>
+                <p>
+                    <i class="bi bi-envelope-at-fill"></i>
+                    ayuda@melon.seed
+                </p>
+                <p><i class="bi bi-telephone-fill"></i> 778 537 972</p>
+            </div>
+            <!-- Grid column -->
         </div>
+        <!-- Grid row -->
+
 
         <!-- Section: Links  -->
 
         <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            Ↄ 2023 Copyleft:
+        <div class="text-center p-4 footer-bottom">
+            2023 Copyleft:
             <a class="text-reset fw-bold" href="#">Melonseed</a>
         </div>
         <!-- Copyright -->

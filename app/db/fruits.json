@@ -1,23 +1,134 @@
 [
     {
-        "name" : "Manzana",
-        "price" : 1.79,
-        "weight" : 180,
-        "origin": "España",
-        "image" : "apples.jpg"
+        "name": "Manzana",
+        "price": 2.59,
+        "origin": "['it','fr', 'be']",
+        "image": "apples.jpg"
     },
     {
-        "name" : "Aguacate",
-        "price" : 2.99,
-        "weight" : 200,
-        "origin": "España",
-        "image" : "avocados.jpg"
+        "name": "Aguacate",
+        "price": 6.49,
+        "origin": "['mx', 'us', 'id']",
+        "image": "avocados.jpg"
     },
     {
-        "name" : "Plátano",
-        "price" : 2.15,
-        "weight" : 120,
-        "origin": "España",
-        "image" : "avocados.jpg"
+        "name": "Plátano",
+        "price": 2.15,
+        "origin": "['in', 'ec', 'br']",
+        "image": "avocados.jpg"
+    },
+    {
+        "name": "Arándanos",
+        "price": 11.18,
+        "origin": "['us', 'ca', 'lv']",
+        "image": "blueberries.jpg"
+    },
+    {
+        "name": "Carambolas",
+        "price": 19.18,
+        "origin": "['my', 'th', 'id']",
+        "image": "carambolas.jpg"
+    },
+    {
+        "name": "Cerezas",
+        "price": 19.18,
+        "origin": "['ir', 'us', 'tr']",
+        "image": "cherries.jpg"
+    },
+    {
+        "name": "Cocos",
+        "price": 14.18,
+        "origin": "['id', 'in', 'ph']",
+        "image": "coconuts.jpg"
+    },
+    {
+        "name": "Pitahayas",
+        "price": 14.23,
+        "origin": "['cn', 'kr', 'th']",
+        "image": "dragonfruits.jpg"
+    },
+    {
+        "name": "Higos",
+        "price": 8.59,
+        "origin": "['tr', 'ir', 'eg']",
+        "image": "figs.jpg"
+    },
+    {
+        "name": "Limones",
+        "price": 8.59,
+        "origin": "['es', 'ar', 'mx']",
+        "image": "lemons.jpg"
+    },
+    {
+        "name": "Lichis",
+        "price": 11.12,
+        "origin": "['ph', 'in', 'cn']",
+        "image": "lychees.jpg"
+    },
+    {
+        "name": "Mangos",
+        "price": 3.95,
+        "origin": "['in', 'cn', 'ng']",
+        "image": "mangos.jpg"
+    },
+    {
+        "name": "Naranjas",
+        "price": 1.89,
+        "origin": "['es', 'br', 'us']",
+        "image": "oranges.jpg"
+    },
+    {
+        "name": "Papayas",
+        "price": 4.79,
+        "origin": "['br', 'ng', 'pe']",
+        "image": "papayas.jpg"
+    },
+    {
+        "name": "Melocotones",
+        "price": 2.59,
+        "origin": "['es', 'gr', 'us']",
+        "image": "peaches.jpg"
+    },
+    {
+        "name": "Peras",
+        "price": 1.78,
+        "origin": "['it', 'es', 'il']",
+        "image": "pears.jpg"
+    },
+    {
+        "name": "Piñas",
+        "price": 4.95,
+        "origin": "['th', 'ph', 'co']",
+        "image": "pineapples.jpg"
+    },
+    {
+        "name": "Ciruelas",
+        "price": 1.99,
+        "origin": "['es', 'cn', 'ma']",
+        "image": "plums.jpg"
+    },
+    {
+        "name": "Granadas",
+        "price": 3.89,
+        "origin": "['in', 'ir', 'bd']",
+        "image": "pomegranates.jpg"
+    },
+    {
+        "name": "Frambuesas",
+        "price": 12.29,
+        "origin": "['ru', 'pl', 'ua']",
+        "image": "raspberries.jpg"
+    },
+    {
+        "name": "Fresas",
+        "price": 3.20,
+        "origin": "['es', 'fr', 'nl']",
+        "image": "strawberries.jpg"
+    },
+    {
+        "name": "Sandías",
+        "price": 3.20,
+        "origin": "['es', 'cn', 'tr']",
+        "image": "watermelons.jpg"
     }
 ]

@@ -1,0 +1,33 @@
+@import 'fonts.css';
+
+html, body {
+    font-family: 'Noto Sans';
+}
+
+nav, header, footer {
+    background-color: #163a24;
+}
+
+.content {
+    background-color: #f2efe6;
+}
+
+.navbar-brand, h5 {
+    font-family: 'Bree Serif';
+}
+
+
+.nav-link {
+    font-weight: 600;
+}
+
+.footer-bottom {
+    background-color: #fbfaf7;
+    color: #163a24;
+}
+
+
+
+
+
+
