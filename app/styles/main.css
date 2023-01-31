@@ -11,6 +11,7 @@ footer,
     background-color: #163a24;
 }
 
+
 .content {
     background-color: #f2efe6;
 }
@@ -26,7 +27,7 @@ h5 {
     position: relative;
 }
 
-.nav-link::after {
+.link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -39,7 +40,7 @@ h5 {
     transition: transform 0.25s ease-out;
 }
 
-.nav-link:hover::after {
+.link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
