@@ -1,10 +1,13 @@
-@import 'fonts.css';
-
-html, body {
-    font-family: 'Noto Sans';
+html,
+body {
+    font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden;
 }
 
-nav, header, footer {
+nav,
+header,
+footer,
+.card {
     background-color: #163a24;
 }
 
@@ -12,8 +15,9 @@ nav, header, footer {
     background-color: #f2efe6;
 }
 
-.navbar-brand, h5 {
-    font-family: 'Bree Serif';
+.navbar-brand,
+h5 {
+    font-family: 'Bree Serif', serif;
 }
 
 
@@ -21,13 +25,41 @@ nav, header, footer {
     font-weight: 600;
 }
 
+.card button {
+    background: linear-gradient(to right, #fab5a0 50%, #fbc8b8 50%);
+    color: #163a24;
+    border: none;
+    height: 2.5em;
+    font-weight: 600;
+}
+
+.cart-btn {
+    background: linear-gradient(to right, #15762e 50%, #198c36 50%);
+    max-width: 10em;
+}
+
+.card button, .cart-btn {
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .35s ease-out;
+}
+
+.card button:hover, .cart-btn:hover {
+    background-position: left bottom;
+}
+
+.card-img-top {
+    height: 20vh;
+    object-fit: cover;
+} 
+
+
 .footer-bottom {
     background-color: #fbfaf7;
     color: #163a24;
 }
 
-
-
-
-
-
+.copyleft {
+    display: inline-block;
+    transform: rotateY(180deg);
+  }
