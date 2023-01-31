@@ -19,17 +19,17 @@ function showCatalog() {
                         <div class="card">
                             <div class="img-container">
                                 <img src="/app/assets/images/fruits/${image}" class="card-img-top img-fluid"
-                                alt="...">
+                                alt="${fruit}">
                             <div class="overlay text-light text-center">
                                 <h2 class="p-4">${fruit}</h2>
-                                Origen:
+                                <h4>Origen:</h4>
                                 <ul class="list-unstyled">
                                     ${getCountryFlags(...origin)}
                                 </ul>
                             </div>
                             </div>     
                             <div class="card-body">
-                                <h4 class="text-light text-center">${formatCurrency(price)}</h4>
+                                <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                                 <div class="d-grid">
                                     <button type="button" class="rounded-pill"><i class="bi bi-cart-plus-fill"></i>
                                         Añadir</button>
@@ -56,7 +56,7 @@ function getCountryFlags(...origin){
     let countries = ""
     origin.forEach(country => {
         console.log(country)
-        countries += `<li><img src="https://flagsapi.com/${country.toUpperCase()}/flat/24.png"> ${getCountryName(country)}<li>`
+        countries += `<li><img src="https://flagcdn.com/24x18/${country}.png"> ${getCountryName(country)}<li>`
     })
     return countries;
 }

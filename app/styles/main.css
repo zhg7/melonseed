@@ -23,6 +23,25 @@ h5 {
 
 .nav-link {
     font-weight: 600;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 6px;
+    left: 0;
+    background-color: #f7bc28;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .card button {
@@ -38,13 +57,15 @@ h5 {
     max-width: 10em;
 }
 
-.card button, .cart-btn {
+.card button,
+.cart-btn {
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .35s ease-out;
 }
 
-.card button:hover, .cart-btn:hover {
+.card button:hover,
+.cart-btn:hover {
     background-position: left bottom;
 }
 
@@ -82,4 +103,4 @@ h5 {
 .copyleft {
     display: inline-block;
     transform: rotateY(180deg);
-  }
+}
