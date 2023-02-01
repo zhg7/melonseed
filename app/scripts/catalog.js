@@ -10,6 +10,8 @@ async function getFruits(path) {
     showCatalog();
 }
 
+let description = "";
+
 function showCatalog() {
     const featuredSection = document.querySelector(".featured-fruits");
     fruits.forEach(fruit => {
@@ -21,23 +23,26 @@ function showCatalog() {
                                 <img src="/app/assets/images/fruits/${image}" class="card-img-top img-fluid"
                                 alt="${fruit}">
                             <div class="overlay text-light text-center">
-                                <h2 class="p-4">${fruit}</h2>
-                                <h4>Origen:</h4>
-                                <ul class="list-unstyled">
-                                    ${getCountryFlags(...origin)}
-                                </ul>
+                                <h2 class="pt-4">${fruit}</h2>
+                                <p class="fst-italic fs-5">${binomial}</p>
+                                <button type="button"
+                            class="text-light green-btn rounded-pill text-center px-4 description-trigger" data-bs-toggle="modal"
+                            data-bs-target="#descriptionModal">Más info.</button>
                             </div>
                             </div>     
                             <div class="card-body">
-                                ${getDescription(binomial).then()}
                                 <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                                 <div class="d-grid">
-                                    <button type="button" class="rounded-pill"><i class="bi bi-cart-plus-fill"></i>
+                                    <button type="button" class="pink-btn rounded-pill"><i class="bi bi-cart-plus-fill"></i>
                                         Añadir</button>
                                 </div>
                             </div>
                         </div>
                     </div>`
+    })
+    const descriptionButtons = document.querySelectorAll(".description-trigger");
+    descriptionButtons.forEach(btn => {
+        btn.addEventListener("click", getDescription)
     })
 }
 
@@ -47,32 +52,48 @@ function formatCurrency(price) {
     return numberFormat.format(price);
 }
 
-function getCountryName(iso){
+function getCountryName(iso) {
     const regionNames = new Intl.DisplayNames(['es'], { type: 'region' });
     return regionNames.of(iso);
 }
 
-function getCountryFlags(...origin){
-    let countries = ""
+function getCountryFlags(scientificName) {
+    const fruit = fruits.filter(fruit => fruit.binomial === scientificName)[0];
+    const { origin } = fruit;
+
+    let countries = [];
     origin.forEach(country => {
-        countries += `<li><img src="https://flagcdn.com/24x18/${country}.png"> ${getCountryName(country)}<li>`
+        countries.push(`<img src="https://flagcdn.com/16x12/${country}.png"> ${getCountryName(country)}`);
     })
-    return countries;
+    return countries.join(" / ");
 }
 
-async function getDescription(title){
+// Wikipedia API
+async function retrieveDescription(title) {
     const response = await fetch(`https://es.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${title}&origin=*`);
     const result = await response.json();
-    const { query : {pages} } = result
-    let articleId;
-    for (let p in pages) {
-        if (pages.hasOwnProperty(p)) {
-            articleId = p;
-        }
-    }
-    let cadena = result.query.pages[articleId].extract;
-    cadena = cadena.replace(/\[[0-9]+\]/gm, "")
-
-    return cadena.then((text) => text.toString());
-
+    const { query: { pages } } = result
+    const articleId = Object.keys(pages)[0];
+    const output = result.query.pages[articleId].extract;
+    const description = output.replace(/\[[A-Za-z0-9 ]+\]/gm, "") // Eliminar corchetes.
+    return description;
 }
+
+function getDescription(fruit){
+    const scientificName = fruit.target.previousElementSibling.textContent;
+    const genericName = fruit.target.previousElementSibling.previousElementSibling.textContent;
+    retrieveDescription(scientificName).then((desc) => setDescription(genericName, scientificName, desc))
+}
+
+function setDescription(genericName, scientificName, description){
+    const modalHeader = document.querySelector("#descriptionModal .modal-header h1")
+    const modalBody = document.querySelector("#descriptionModal .modal-body");
+    const modalFooter = document.querySelector("#descriptionModal .modal-footer");
+    modalHeader.textContent = genericName;
+    modalBody.textContent = description;
+    modalFooter.innerHTML = `<small>Exportadores: ${getCountryFlags(scientificName)}<small>`;
+}
+
+
+
+

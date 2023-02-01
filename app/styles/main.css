@@ -45,28 +45,31 @@ h5 {
     transform-origin: bottom left;
 }
 
-.card button {
-    background: linear-gradient(to right, #fab5a0 50%, #fbc8b8 50%);
-    color: #163a24;
+button {
     border: none;
     height: 2.5em;
     font-weight: 600;
 }
 
-.cart-btn {
+.pink-btn {
+    background: linear-gradient(to right, #fab5a0 50%, #fbc8b8 50%);
+    color: #163a24;
+}
+
+.green-btn {
     background: linear-gradient(to right, #15762e 50%, #198c36 50%);
     max-width: 10em;
 }
 
-.card button,
-.cart-btn {
+.pink-btn,
+.green-btn {
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .35s ease-out;
 }
 
-.card button:hover,
-.cart-btn:hover {
+.pink-btn:hover,
+.green-btn:hover {
     background-position: left bottom;
 }
 
