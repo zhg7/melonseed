@@ -13,7 +13,7 @@ async function getFruits(path) {
 function showCatalog() {
     const featuredSection = document.querySelector(".featured-fruits");
     fruits.forEach(fruit => {
-        ({ fruit, price, image, origin } = fruit);
+        ({ fruit, binomial, price, image, origin } = fruit);
         featuredSection.innerHTML += `
     <div class="col">
                         <div class="card">
@@ -29,6 +29,7 @@ function showCatalog() {
                             </div>
                             </div>     
                             <div class="card-body">
+                                ${getDescription(binomial).then()}
                                 <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                                 <div class="d-grid">
                                     <button type="button" class="rounded-pill"><i class="bi bi-cart-plus-fill"></i>
@@ -52,11 +53,26 @@ function getCountryName(iso){
 }
 
 function getCountryFlags(...origin){
-    console.log(origin)
     let countries = ""
     origin.forEach(country => {
-        console.log(country)
         countries += `<li><img src="https://flagcdn.com/24x18/${country}.png"> ${getCountryName(country)}<li>`
     })
     return countries;
+}
+
+async function getDescription(title){
+    const response = await fetch(`https://es.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${title}&origin=*`);
+    const result = await response.json();
+    const { query : {pages} } = result
+    let articleId;
+    for (let p in pages) {
+        if (pages.hasOwnProperty(p)) {
+            articleId = p;
+        }
+    }
+    let cadena = result.query.pages[articleId].extract;
+    cadena = cadena.replace(/\[[0-9]+\]/gm, "")
+
+    return cadena.then((text) => text.toString());
+
 }
