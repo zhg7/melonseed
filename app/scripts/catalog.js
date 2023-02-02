@@ -1,6 +1,5 @@
 const JSON_FILE = "/app/db/fruits.json";
-const FRUITS_TO_FEATURE = ["Higos", "Fresas", "Sandías", "Piñas", "Melocotones", "Cerezas"];
-
+const FRUITS_TO_FEATURE = ["Higos", "Fresas", "Sandías", "Piñas", "Melocotones", "Mangos"];
 
 let fruits;
 let featuredFruits;
@@ -29,12 +28,7 @@ function getFeaturedFruits(fruitsToFeature) {
 
 function showCatalog(isFeatured) {
     const featuredSection = document.querySelector(".featured-fruits");
-    let fruitsToShow;
-    if (isFeatured) {
-        fruitsToShow = featuredFruits;
-    } else {
-        fruitsToShow = fruits;
-    }
+    const fruitsToShow = isFeatured ? featuredFruits : fruits;
     fruitsToShow.forEach(fruit => {
         ({ fruit, binomial, price, image, origin } = fruit);
         featuredSection.innerHTML += `
