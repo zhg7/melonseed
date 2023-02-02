@@ -69,7 +69,7 @@ function formatCurrency(price) {
 
 function getCountryName(iso) {
     const regionNames = new Intl.DisplayNames(['es'], { type: 'region' });
-    return regionNames.of(iso);
+    return regionNames.of(iso.toUpperCase());
 }
 
 function getCountryFlags(scientificName) {

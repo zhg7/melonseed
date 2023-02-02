@@ -20,6 +20,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/app/styles/main.css">
     <script src="app/scripts/catalog.js" defer></script>
+    <script src="app/scripts/cookie.js" defer></script>
 </head>
 
 <body>
@@ -59,11 +60,14 @@
     <header class="container-fluid p-0">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-            
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="2500">
                     <img src="app/assets/images/fruits/tangerines_cr.jpg" class="d-block w-100" alt="...">
@@ -93,7 +97,7 @@
                         <small>Ciruelas — <i>Prunus domestica</i></small>
                     </div>
                 </div>
-            </div>      
+            </div>
         </div>
     </header>
     <section class="container-fluid content p-4">
@@ -255,6 +259,22 @@
             </div>
         </div>
     </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast cookie" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">🍪 Consentimiento de cookies</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <p>¿Aceptas crear y guardar una cookie en tu navegador?</p>
+                <small>Se guardará un UUID aleatorio que expirará en 7 días.</small>
+                <div class="mt-2 pt-2 border-top d-flex justify-content-center">
+                    <button type="button" class="text-light rounded-pill green-btn px-4" id="accept-cookie"><i class="bi bi-check-circle-fill"> </i>Acepto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
