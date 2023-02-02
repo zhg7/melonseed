@@ -25,24 +25,7 @@ h5 {
 .nav-link {
     font-weight: 600;
     position: relative;
-}
-
-.link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 3px;
-    bottom: 6px;
-    left: 0;
-    background-color: #f7bc28;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
-.link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    cursor: pointer;
 }
 
 button {
@@ -98,6 +81,10 @@ button {
     height: 100%;
 }
 
+.slogan {
+    font-size: 5vw;
+}
+
 
 .footer-bottom {
     background-color: #fbfaf7;
@@ -107,4 +94,24 @@ button {
 .copyleft {
     display: inline-block;
     transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 992px) {
+    .link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: 6px;
+        left: 0;
+        background-color: #f7bc28;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
 }
