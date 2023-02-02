@@ -17,7 +17,7 @@ footer,
 }
 
 .navbar-brand,
-h5 {
+h5, .slogan {
     font-family: 'Bree Serif', serif;
 }
 
@@ -85,7 +85,6 @@ button {
     font-size: 5vw;
 }
 
-
 .footer-bottom {
     background-color: #fbfaf7;
     color: #163a24;
@@ -115,3 +114,4 @@ button {
         transform-origin: bottom left;
     }
 }
+

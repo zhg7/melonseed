@@ -37,7 +37,7 @@
     {
         "fruit": "Cerezas",
 		"binomial" : "Prunus cerasus",
-        "price": 12.18,
+        "price": 9.18,
         "origin": ["ir", "us", "tr"],
         "image": "cherries.jpg"
     },
@@ -149,7 +149,7 @@
     {
         "fruit": "Sandías",
 		"binomial" : "Citrullus lanatus",
-        "price": 3.20,
+        "price": 1.45,
         "origin": ["es", "cn", "tr"],
         "image": "watermelons.jpg"
     }

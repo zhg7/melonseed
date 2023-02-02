@@ -1,20 +1,41 @@
 const JSON_FILE = "/app/db/fruits.json";
+const FRUITS_TO_FEATURE = ["Higos", "Fresas", "Sandías", "Piñas", "Melocotones", "Cerezas"];
+
 
 let fruits;
-getFruits(JSON_FILE);
+let featuredFruits;
+
+getFruits(JSON_FILE).then(() => {
+    getFeaturedFruits(FRUITS_TO_FEATURE);
+    if (location.href.includes("catalog")) {
+        showCatalog(false);
+    }
+    if (location.pathname === "/") {
+        showCatalog(true);
+    }
+
+});
 
 async function getFruits(path) {
     const response = await fetch(path);
     const result = await response.json();
     fruits = result;
-    showCatalog();
 }
 
-let description = "";
+function getFeaturedFruits(fruitsToFeature) {
+    const filteredFruits = fruits.filter((fruit) => fruitsToFeature.includes(fruit.fruit))
+    featuredFruits = filteredFruits;
+}
 
-function showCatalog() {
+function showCatalog(isFeatured) {
     const featuredSection = document.querySelector(".featured-fruits");
-    fruits.forEach(fruit => {
+    let fruitsToShow;
+    if (isFeatured) {
+        fruitsToShow = featuredFruits;
+    } else {
+        fruitsToShow = fruits;
+    }
+    fruitsToShow.forEach(fruit => {
         ({ fruit, binomial, price, image, origin } = fruit);
         featuredSection.innerHTML += `
     <div class="col">
@@ -79,13 +100,13 @@ async function retrieveDescription(title) {
     return description;
 }
 
-function getDescription(fruit){
+function getDescription(fruit) {
     const scientificName = fruit.target.previousElementSibling.textContent;
     const genericName = fruit.target.previousElementSibling.previousElementSibling.textContent;
     retrieveDescription(scientificName).then((desc) => setDescription(genericName, scientificName, desc))
 }
 
-function setDescription(genericName, scientificName, description){
+function setDescription(genericName, scientificName, description) {
     const modalHeader = document.querySelector("#descriptionModal .modal-header h1")
     const modalBody = document.querySelector("#descriptionModal .modal-body");
     const modalFooter = document.querySelector("#descriptionModal .modal-footer");
