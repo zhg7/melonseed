@@ -3,7 +3,7 @@
 const JSON_FILE = "/app/db/fruits.json";
 const FRUITS_TO_FEATURE = ["Higos", "Fresas", "Sandías", "Piñas", "Melocotones", "Mangos"];
 
-let fruits;
+let availableFruits;
 let featuredFruits;
 
 getFruits(JSON_FILE).then(() => {
@@ -20,19 +20,19 @@ getFruits(JSON_FILE).then(() => {
 async function getFruits(path) {
     const response = await fetch(path);
     const result = await response.json();
-    fruits = result;
+    availableFruits = result;
 }
 
 function getFeaturedFruits(fruitsToFeature) {
-    const filteredFruits = fruits.filter((fruit) => fruitsToFeature.includes(fruit.fruit))
+    const filteredFruits = availableFruits.filter((fruit) => fruitsToFeature.includes(fruit.fruit))
     featuredFruits = filteredFruits;
 }
 
 function showCatalog(isFeatured) {
     const featuredSection = document.querySelector(".featured-fruits");
-    const fruitsToShow = isFeatured ? featuredFruits : fruits;
-    fruitsToShow.forEach(fruit => {
-        ({ fruit, binomial, price, image, origin } = fruit);
+    const fruitsToShow = isFeatured ? featuredFruits : availableFruits;
+    fruitsToShow.forEach(availableFruits => {
+        const { fruit, binomial, price, image } = availableFruits;
         featuredSection.innerHTML += `
     <div class="col">
                         <div class="card">
