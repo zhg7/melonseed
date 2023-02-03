@@ -1,3 +1,5 @@
+"use strict";
+
 const cookieToast = new bootstrap.Toast(document.querySelector('.cookie'));
 const consentBtn = document.getElementById("accept-cookie");
 

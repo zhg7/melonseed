@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/app/styles/main.css">
     <script src="app/scripts/catalog.js" defer></script>
     <script src="app/scripts/cookie.js" defer></script>
+    <script src="app/scripts/auth.js" defer></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                     </li>
                     <li class="nav-item mx-2">
                         <a class="link nav-link text-light" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Iniciar
+                            data-bs-target="#loginModal">Iniciar
                             sesión</a>
                     </li>
                     <li class="nav-item mx-2">
@@ -183,61 +184,65 @@
     <!-- Footer -->
 
     <!-- Modals -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Iniciar sesión</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="user-label"><i class="bi bi-person-fill"></i></span>
+                            <input type="text" id="login-user" class="form-control" placeholder="Nombre de usuario"
+                                aria-label="Username" aria-describedby="basic-addon">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="password-label"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" id="login-password" class="form-control" placeholder="Contraseña"
+                                aria-label="Password" aria-describedby="basic-addon">
                         </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="text-light rounded-pill green-btn px-4"><i
+                                class="bi bi-box-arrow-in-right"> </i>Entrar</button>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#exampleModal2">¿No estás
+                    <a href="#" class="link-success" data-bs-toggle="modal" data-bs-target="#signupModal">¿No estás
                         registrado? ¡Date de alta!</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Crear usuario</h1>
+                    <h1 class="modal-title fs-5" id="signupModalLabel">Crear usuario</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="s-user-label"><i class="bi bi-person-fill"></i></span>
+                            <input type="text" id="signup-user" class="form-control" placeholder="Nombre de usuario"
+                                aria-label="Username" aria-describedby="basic-addon">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="s-password-label"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" id="signup-password" class="form-control" placeholder="Contraseña"
+                                aria-label="Password" aria-describedby="basic-addon">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Repetir contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="s-rpassword-label"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" id="signup-rpassword" class="form-control"
+                                placeholder="Confirmar contraseña" aria-label="Password" aria-describedby="basic-addon">
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="text-light rounded-pill green-btn px-4"><i class="bi bi-person-fill-add"> </i>Enviar</button>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="link-info" data-bs-toggle="modal" data-bs-target="#exampleModal">¿Ya te has
+                    <a href="#" class="link-success" data-bs-toggle="modal" data-bs-target="#loginModal">¿Ya te has
                         registrado? ¡Inicia sesión!</a>
                 </div>
             </div>
@@ -269,7 +274,8 @@
                 <p>¿Aceptas crear y guardar una cookie en tu navegador?</p>
                 <small>Se guardará un UUID aleatorio que expirará en 7 días.</small>
                 <div class="mt-2 pt-2 border-top d-flex justify-content-center">
-                    <button type="button" class="text-light rounded-pill green-btn px-4" id="accept-cookie"><i class="bi bi-check-circle-fill"> </i>Acepto</button>
+                    <button type="button" class="text-light rounded-pill green-btn px-4" id="accept-cookie"><i
+                            class="bi bi-check-circle-fill"> </i>Acepto</button>
                 </div>
             </div>
         </div>

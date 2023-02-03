@@ -1,3 +1,5 @@
+"use strict";
+
 const JSON_FILE = "/app/db/fruits.json";
 const FRUITS_TO_FEATURE = ["Higos", "Fresas", "Sandías", "Piñas", "Melocotones", "Mangos"];
 
