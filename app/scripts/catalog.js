@@ -75,7 +75,7 @@ function getCountryName(iso) {
 }
 
 function getCountryFlags(scientificName) {
-    const fruit = fruits.filter(fruit => fruit.binomial === scientificName)[0];
+    const fruit = availableFruits.filter(fruit => fruit.binomial === scientificName)[0];
     const { origin } = fruit;
 
     let countries = [];
