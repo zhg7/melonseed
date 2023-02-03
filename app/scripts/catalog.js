@@ -9,7 +9,7 @@ getFruits(JSON_FILE).then(() => {
     if (location.href.includes("catalog")) {
         showCatalog(false);
     }
-    if (location.pathname === "/") {
+    if (location.pathname === "/" || location.pathname === "/index.html") {
         showCatalog(true);
     }
 
