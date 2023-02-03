@@ -17,7 +17,8 @@ footer,
 }
 
 .navbar-brand,
-h5, .slogan {
+h5,
+.slogan {
     font-family: 'Bree Serif', serif;
 }
 
@@ -95,6 +96,10 @@ button {
     transform: rotateY(180deg);
 }
 
+.modal-open {
+    padding-right: 0 !important;
+}
+
 @media screen and (min-width: 992px) {
     .link::after {
         content: '';
@@ -114,4 +119,3 @@ button {
         transform-origin: bottom left;
     }
 }
-
