@@ -1,5 +1,21 @@
 "use strict";
 
+const DEFAULT_USERS = [
+    {
+        "user": "melonseed",
+        "password": "Fruit1234"
+    },
+    {
+        "user": "test",
+        "password": "Hola1234"
+    }
+]
+
+
+if (localStorage.getItem("users") === null) {
+    localStorage.setItem("users", JSON.stringify(DEFAULT_USERS));
+}
+
 // Registro
 const signUpForm = document.querySelector(".needs-validation");
 
@@ -14,23 +30,32 @@ function validateSignUp(e) {
     const user = form.signupuser;
     const password = form.signuppassword;
     const repeatPassword = form.signuprpassword;
-    
+    let isEverythingCorrect = true;
+
     if (!usernameRegex.test(user.value)) {
+        isEverythingCorrect = false;
         provideFeedback(user, true)
     } else {
         provideFeedback(user, false)
     }
 
     if (!passwordRegex.test(password.value)) {
+        isEverythingCorrect = false;
         provideFeedback(password, true)
     } else {
         provideFeedback(password, false)
     }
 
     if (password.value !== repeatPassword.value || !passwordRegex.test(password.value)) {
+        isEverythingCorrect = false;
         provideFeedback(repeatPassword, true)
     } else {
         provideFeedback(repeatPassword, false)
+    }
+
+    if (isEverythingCorrect) {
+        showSubmitResult(form, user.value)
+        createUser(user.value, password.value);
     }
 
 }
@@ -43,6 +68,24 @@ function provideFeedback(field, isError) {
         field.classList.remove("is-invalid");
         field.classList.add("is-valid");
     }
+}
+
+function showSubmitResult(form, username){
+    form.lastElementChild.innerHTML = `<div class="mt-2 alert alert-success alert-dismissible fade show" role="success">
+    Se ha creado el usuario <b>${username}</b> exitosamente.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>`
+}
+
+function createUser(user, password) {
+    const newUser = {
+        "user": user,
+        "password": password
+    }
+
+    const users = JSON.parse(localStorage.getItem("users"));
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
 }
 
 // Inicio de sesión
