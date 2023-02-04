@@ -42,8 +42,7 @@
                         <a class="link nav-link text-light" href="app/catalog.html">Catálogo</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="link nav-link text-light" data-bs-toggle="modal"
-                            data-bs-target="#loginModal">Iniciar
+                        <a class="link nav-link text-light" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar
                             sesión</a>
                     </li>
                     <li class="nav-item mx-2">
@@ -222,23 +221,33 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form class="needs-validation" autocomplete="off">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="s-user-label"><i class="bi bi-person-fill"></i></span>
-                            <input type="text" id="signup-user" class="form-control" placeholder="Nombre de usuario"
+                            <input type="text" id="signupuser" class="form-control rounded-end" placeholder="Nombre de usuario"
                                 aria-label="Username" aria-describedby="basic-addon">
+                            <div class="invalid-feedback">
+                                Introduce un nombre de usuario válido.
+                            </div>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="s-password-label"><i class="bi bi-key-fill"></i></span>
-                            <input type="password" id="signup-password" class="form-control" placeholder="Contraseña"
+                            <input type="password" id="signuppassword" class="form-control rounded-end" placeholder="Contraseña"
                                 aria-label="Password" aria-describedby="basic-addon">
+                                <div class="invalid-feedback">
+                                    Introduce una contraseña válida.
+                                </div>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="s-rpassword-label"><i class="bi bi-key-fill"></i></span>
-                            <input type="password" id="signup-rpassword" class="form-control"
+                            <input type="password" id="signuprpassword" class="form-control rounded-end"
                                 placeholder="Confirmar contraseña" aria-label="Password" aria-describedby="basic-addon">
+                                <div class="invalid-feedback">
+                                    Introduce nuevamente la contraseña.
+                                </div>
                         </div>
-                        <button type="submit" class="text-light rounded-pill green-btn px-4"><i class="bi bi-person-fill-add"> </i>Enviar</button>
+                        <button type="submit" class="text-light rounded-pill green-btn px-4"><i
+                                class="bi bi-person-fill-add"> </i>Enviar</button>
                     </form>
                 </div>
                 <div class="modal-footer">

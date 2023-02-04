@@ -78,7 +78,7 @@ function getCountryFlags(scientificName) {
     const fruit = availableFruits.filter(fruit => fruit.binomial === scientificName)[0];
     const { origin } = fruit;
 
-    let countries = [];
+    const countries = [];
     origin.forEach(country => {
         countries.push(`<img src="https://flagcdn.com/16x12/${country}.png"> ${getCountryName(country)}`);
     })
