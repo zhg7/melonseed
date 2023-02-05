@@ -21,6 +21,7 @@ async function getFruits(path) {
     const response = await fetch(path);
     const result = await response.json();
     availableFruits = result;
+    localStorage.setItem("fruits", JSON.stringify(result));
 }
 
 function getFeaturedFruits(fruitsToFeature) {

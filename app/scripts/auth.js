@@ -3,11 +3,17 @@
 const DEFAULT_USERS = [
     {
         "user": "melonseed",
-        "password": "Fruit1234"
-    },
-    {
-        "user": "test",
-        "password": "Hola1234"
+        "password": "Fruit1234",
+        "cart": [
+            {
+                "item": "Limones",
+                "quantity": 2
+            },
+            {
+                "item": "Fresas",
+                "quantity": 4
+            }
+        ]
     }
 ]
 
@@ -88,7 +94,8 @@ function showSubmitResult(isLogin, form, username) {
 function createUser(user, password) {
     const newUser = {
         "user": user.toLowerCase(),
-        "password": password
+        "password": password,
+        "cart" : []
     }
 
     const users = JSON.parse(localStorage.getItem("users"));
