@@ -2,6 +2,7 @@ html,
 body {
     font-family: 'Noto Sans', sans-serif;
     overflow-x: hidden;
+    padding-right: 0 !important;
 }
 
 nav,
@@ -94,10 +95,6 @@ button {
 .copyleft {
     display: inline-block;
     transform: rotateY(180deg);
-}
-
-.modal-open {
-    padding-right: 0 !important;
 }
 
 @media screen and (min-width: 992px) {
