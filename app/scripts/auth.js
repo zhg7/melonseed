@@ -87,7 +87,7 @@ function showSubmitResult(isLogin, form, username) {
 
 function createUser(user, password) {
     const newUser = {
-        "user": user,
+        "user": user.toLowerCase(),
         "password": password
     }
 
@@ -109,13 +109,13 @@ function validateLogin(e) {
 
     const currentUsers = JSON.parse(localStorage.getItem("users"));
 
-    if (!currentUsers.some(user => user.user === userName.value && user.password === userPassword.value)){
+    if (!currentUsers.some(user => user.user === userName.value.toLowerCase() && user.password === userPassword.value)){
         provideFeedback(userName, true);
         provideFeedback(userPassword, true);
     } else {
         provideFeedback(userName, false);
         provideFeedback(userPassword, false);
-        showSubmitResult(true, form, userName.value);
+        showSubmitResult(true, form, userName.value.toLowerCase());
     }
 
 }
