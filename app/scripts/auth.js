@@ -109,13 +109,23 @@ function validateLogin(e) {
 
     const currentUsers = JSON.parse(localStorage.getItem("users"));
 
-    if (!currentUsers.some(user => user.user === userName.value.toLowerCase() && user.password === userPassword.value)){
+    if (!currentUsers.some(user => user.user === userName.value.toLowerCase() && user.password === userPassword.value)) {
         provideFeedback(userName, true);
         provideFeedback(userPassword, true);
     } else {
         provideFeedback(userName, false);
         provideFeedback(userPassword, false);
         showSubmitResult(true, form, userName.value.toLowerCase());
+        createSession(userName.value.toLowerCase());
     }
 
 }
+
+function createSession(user) {
+    sessionStorage.setItem("logged_user", user);
+    setTimeout(() => {
+        location.reload();
+    }, 950);
+
+}
+
