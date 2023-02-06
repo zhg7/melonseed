@@ -5,8 +5,9 @@ if (sessionStorage.getItem("logged_user") === null) {
     location.href = "/";
 }
 
+const users = JSON.parse(localStorage.getItem("users"));
 const fruits = JSON.parse(localStorage.getItem("fruits"));
-const userCart = JSON.parse(localStorage.getItem("users")).find(user => user.user === sessionStorage.getItem("logged_user")).cart;
+const userCart = users.find(user => user.user === sessionStorage.getItem("logged_user")).cart;
 const itemList = document.querySelector(".cart-items");
 
 getCartUser();
@@ -14,24 +15,24 @@ showCartItems();
 
 const decreaseBtns = document.querySelectorAll(".decrease-counter");
 const increaseBtns = document.querySelectorAll(".increase-counter");
+const deleteBtns = document.querySelectorAll(".delete-item");
 
 decreaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        const target = e.target.tagName === "BUTTON" ? e.target.parentElement : e.target.parentElement.parentElement; // Contemplar clic en el icono también.
-        const quantityInput = target.parentElement.querySelector('input[type=number]')
-        quantityInput.stepDown();
-        updateQuantity(quantityInput, Number(quantityInput.value));
+        updateQuantity(e, false);
     })
 })
 
 increaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        const target = e.target.tagName === "BUTTON" ? e.target.parentElement : e.target.parentElement.parentElement;
-        const quantityInput = target.parentElement.querySelector('input[type=number]')
-        quantityInput.stepUp();
-        updateQuantity(quantityInput, Number(quantityInput.value));
+        updateQuantity(e, true);
     })
 })
+
+deleteBtns.forEach(btn => {
+    btn.addEventListener("click", removeItem);
+})
+
 
 
 function getCartUser() {
@@ -46,7 +47,7 @@ function showCartItems() {
         const targetFruit = fruits.find(fruit => fruit.fruit === item.item);
         const { quantity } = item;
         const { fruit, price, image } = targetFruit;
-        itemList.innerHTML += `<div class="card rounded-3 mb-4 text-light">
+        itemList.innerHTML += `<div class="card rounded-3 mb-4 text-light" id="${fruit}">
         <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2">
@@ -60,7 +61,7 @@ function showCartItems() {
                     <div class="btn-group" role="group" aria-label="Subir y bajar">
                         <button type="button" class="btn btn-primary decrease-counter"><i
                                 class="bi bi-dash-lg"></i></button>
-                        <input id="${fruit}-counter" min="0" name="quantity" value="${quantity}" type="number"
+                        <input id="${fruit}-counter" min="1" name="quantity" value="${quantity}" type="number"
                             class="form-control form-control-sm ml-5 text-center"/>
                         <button type="button" class="btn btn-primary increase-counter"><i
                                 class="bi bi-plus-lg"></i></button>
@@ -70,7 +71,7 @@ function showCartItems() {
                     <h5 class="mb-0">€</h5>
                 </div>
                 <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                    <a href="#!" class="text-danger"><i class="bi bi-trash-fill"></i></a>
+                    <a href="#" class="text-danger"><i class="bi bi-trash-fill delete-item"></i></a>
                 </div>
             </div>
         </div>
@@ -78,13 +79,32 @@ function showCartItems() {
     });
 }
 
-function updateQuantity(input, quantity) {
-    const targetFruit = input.id.replace(/-counter/, "");
-    const users = JSON.parse(localStorage.getItem("users"));
-    const cart = users[users.findIndex(user => user.user === getCartUser())].cart;
-    cart[cart.findIndex(item => item.item === targetFruit)].quantity = quantity;
+function updateQuantity(e, isIncrease) {
+    const target = e.target.tagName === "BUTTON" ? e.target.parentElement : e.target.parentElement.parentElement; // Contemplar clic en el icono también.
+    const quantityInput = target.parentElement.querySelector('input[type=number]')
+    if (isIncrease) {
+        quantityInput.stepUp();
+    } else {
+        quantityInput.stepDown();
+    }
+    const quantity = quantityInput.value;
+    const targetFruit = quantityInput.id.replace(/-counter/, "");
+    userCart[userCart.findIndex(item => item.item === targetFruit)].quantity = quantity;
+    updateUsers();
+}
+
+function removeItem(e) {
+    const target = e.target.closest(".card");
+    const fruitToRemove = target.id;
+    userCart.splice(userCart.findIndex(item => item.item === fruitToRemove), 1);
+    target.remove(target);
+    updateUsers();
+}
+
+function updateUsers() {
     localStorage.setItem("users", JSON.stringify(users));
 }
+
 
 
 
