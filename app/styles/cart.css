@@ -8,3 +8,7 @@ input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
+.bi-plus-circle, .bi-dash-circle {
+  font-size: 1.45em;
+}

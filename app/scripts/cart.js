@@ -20,13 +20,13 @@ const deleteBtns = document.querySelectorAll(".delete-item");
 
 decreaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        getQuantity(e, false);
+        setQuantity(e, false);
     })
 })
 
 increaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        getQuantity(e, true);
+        setQuantity(e, true);
     })
 })
 
@@ -66,18 +66,18 @@ function showCartItems() {
                 </div>
                 <div class="col-md-3 col-xl-2">
                     <div class="btn-group" role="group" aria-label="Subir y bajar">
-                        <button type="button" class="btn btn-primary decrease-counter"><i
-                                class="bi bi-dash-lg"></i></button>
+                        <button type="button" class="btn pink-btn inverted-btn decrease-counter"><i
+                                class="bi bi-dash-circle d-flex"></i></button>
                         <input id="${fruit}-counter" min="1" name="quantity" value="${quantity}" type="number"
-                            class="form-control form-control-sm ml-5 text-center"/>
-                        <button type="button" class="btn btn-primary increase-counter"><i
-                                class="bi bi-plus-lg"></i></button>
+                            class="form-control form-control-sm ml-5 text-center rounded-0"/>
+                        <button type="button" class="btn pink-btn increase-counter"><i
+                                class="bi bi-plus-circle d-flex"></i></button>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-2">
                     <h5 class="mb-0">€</h5>
                 </div>
-                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <div class="col-md-1 text-end">
                     <a href="#" class="text-danger"><i class="bi bi-trash-fill delete-item"></i></a>
                 </div>
             </div>
@@ -86,7 +86,7 @@ function showCartItems() {
     });
 }
 
-function getQuantity(e, isIncrease) {
+function setQuantity(e, isIncrease) {
     const target = e.target.tagName === "BUTTON" ? e.target.parentElement : e.target.parentElement.parentElement; // Contemplar clic en el icono también.
     const quantityInput = target.parentElement.querySelector('input[type=number]')
     if (isIncrease) {
@@ -101,8 +101,12 @@ function getQuantity(e, isIncrease) {
 
 function updateQuantity(input) {
     const quantityInput = input;
-    const quantity = quantityInput.value;
-    console.log(quantityInput.textContent);
+    
+    if (Number(quantityInput.value) <= 0){
+        quantityInput.value = 1;
+    }
+
+    const quantity = Number(quantityInput.value) <= 0 ? 1 : Number(quantityInput.value); // Restringir a un valor mínimo de 1.
     const targetFruit = quantityInput.id.replace(/-counter/, "");
     userCart[userCart.findIndex(item => item.item === targetFruit)].quantity = quantity;
     updateUsers();
@@ -114,6 +118,10 @@ function removeItem(e) {
     userCart.splice(userCart.findIndex(item => item.item === fruitToRemove), 1);
     target.remove(target);
     updateUsers();
+}
+
+function calculatePrice() {
+
 }
 
 function updateUsers() {
