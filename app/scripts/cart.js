@@ -18,6 +18,10 @@ const decreaseBtns = document.querySelectorAll(".decrease-counter");
 const increaseBtns = document.querySelectorAll(".increase-counter");
 const deleteBtns = document.querySelectorAll(".delete-item");
 
+quantityInputs.forEach(field => {
+    calculatePrice(field);
+})
+
 decreaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
         setQuantity(e, false);
@@ -41,7 +45,6 @@ quantityInputs.forEach(btn => {
 })
 
 
-
 function getCartUser() {
     const username = sessionStorage.getItem("logged_user");
     const userNameField = document.getElementById("cart-user");
@@ -51,7 +54,7 @@ function getCartUser() {
 
 function showCartItems() {
     userCart.forEach(item => {
-        const targetFruit = fruits.find(fruit => fruit.fruit === item.item);
+        const targetFruit = findFruit(item.item);
         const { quantity } = item;
         const { fruit, price, image } = targetFruit;
         itemList.innerHTML += `<div class="card rounded-3 mb-4 text-light" id="${fruit}">
@@ -61,21 +64,21 @@ function showCartItems() {
                     <img src="assets/images/fruits/${image}" class="img-fluid rounded-3" alt="">
                 </div>
                 <div class="col-md-3">
-                    <p class="lead fw-normal mb-2">${fruit}</p>
+                    <p class="fs-4 fw-normal mb-2">${fruit}</p>
                     <p><span class="text-light">Precio/kg: </span>${formatCurrency(price)}</p>
                 </div>
                 <div class="col-md-3 col-xl-2">
                     <div class="btn-group" role="group" aria-label="Subir y bajar">
-                        <button type="button" class="btn pink-btn inverted-btn decrease-counter"><i
+                        <button type="button" class="btn pink-btn decrease-counter"><i
                                 class="bi bi-dash-circle d-flex"></i></button>
                         <input id="${fruit}-counter" min="1" name="quantity" value="${quantity}" type="number"
-                            class="form-control form-control-sm ml-5 text-center rounded-0"/>
+                            class="form-control form-control-sm ml-5 text-center rounded-0 fs-5"/>
                         <button type="button" class="btn pink-btn increase-counter"><i
                                 class="bi bi-plus-circle d-flex"></i></button>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-2">
-                    <h5 class="mb-0">€</h5>
+                    <span class="mb-0 amount fs-5">€</span>
                 </div>
                 <div class="col-md-1 text-end">
                     <a href="#" class="text-danger"><i class="bi bi-trash-fill delete-item"></i></a>
@@ -84,6 +87,10 @@ function showCartItems() {
         </div>
     </div>`
     });
+}
+
+function findFruit(fruitName) {
+    return fruits.find(fruit => fruit.fruit === fruitName);
 }
 
 function setQuantity(e, isIncrease) {
@@ -101,13 +108,14 @@ function setQuantity(e, isIncrease) {
 
 function updateQuantity(input) {
     const quantityInput = input;
-    
-    if (Number(quantityInput.value) <= 0){
+
+    if (Number(quantityInput.value) <= 0) {
         quantityInput.value = 1;
     }
 
     const quantity = Number(quantityInput.value) <= 0 ? 1 : Number(quantityInput.value); // Restringir a un valor mínimo de 1.
     const targetFruit = quantityInput.id.replace(/-counter/, "");
+    calculatePrice(input)
     userCart[userCart.findIndex(item => item.item === targetFruit)].quantity = quantity;
     updateUsers();
 }
@@ -120,8 +128,11 @@ function removeItem(e) {
     updateUsers();
 }
 
-function calculatePrice() {
-
+function calculatePrice(input) {
+    const amountField = input.closest(".card").querySelector(".amount");
+    const price = findFruit(input.closest(".card").id).price;
+    const quantity = input.value;
+    amountField.textContent = formatCurrency(price * quantity);
 }
 
 function updateUsers() {

@@ -58,14 +58,6 @@ button {
     background-position: left bottom;
 }
 
-.inverted-btn {
-    background-position: left bottom; 
-}
-
-.inverted-btn:hover {
-    background-position: right bottom;
-}
-
 .card-img-top {
     height: 30vh;
     object-fit: cover;
