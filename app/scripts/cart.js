@@ -125,6 +125,7 @@ function removeItem(e) {
     const fruitToRemove = target.id;
     userCart.splice(userCart.findIndex(item => item.item === fruitToRemove), 1);
     target.remove(target);
+    calculateTotals();
     updateUsers();
 }
 
@@ -133,6 +134,23 @@ function calculatePrice(input) {
     const price = findFruit(input.closest(".card").id).price;
     const quantity = input.value;
     amountField.textContent = formatCurrency(price * quantity);
+    calculateTotals();
+}
+
+function calculateTotals() {
+    const amounts = document.querySelectorAll(".amount");
+    const subtotalField = document.getElementById("subtotal");
+    const totalField = document.getElementById("total");
+    const vatField = document.getElementById("vat");
+    let subtotal = 0;
+    amounts.forEach(amount => {
+        subtotal += Number(amount.textContent.replace(/€/g, "").replace(/\,/g, "."));
+        console.log(amount.textContent)
+    })
+    subtotalField.firstElementChild.textContent = formatCurrency(subtotal);
+    const vat = subtotal * 1.04 - subtotal;
+    vatField.firstElementChild.textContent = formatCurrency(vat);
+    totalField.firstElementChild.textContent = formatCurrency(subtotal + vat);
 }
 
 function updateUsers() {
