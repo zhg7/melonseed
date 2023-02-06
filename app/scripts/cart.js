@@ -13,24 +13,31 @@ const itemList = document.querySelector(".cart-items");
 getCartUser();
 showCartItems();
 
+const quantityInputs = document.querySelectorAll(`[id$="-counter"]`);
 const decreaseBtns = document.querySelectorAll(".decrease-counter");
 const increaseBtns = document.querySelectorAll(".increase-counter");
 const deleteBtns = document.querySelectorAll(".delete-item");
 
 decreaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        updateQuantity(e, false);
+        getQuantity(e, false);
     })
 })
 
 increaseBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
-        updateQuantity(e, true);
+        getQuantity(e, true);
     })
 })
 
 deleteBtns.forEach(btn => {
     btn.addEventListener("click", removeItem);
+})
+
+quantityInputs.forEach(btn => {
+    btn.addEventListener("change", (e) => {
+        updateQuantity(e.target);
+    })
 })
 
 
@@ -79,15 +86,23 @@ function showCartItems() {
     });
 }
 
-function updateQuantity(e, isIncrease) {
+function getQuantity(e, isIncrease) {
     const target = e.target.tagName === "BUTTON" ? e.target.parentElement : e.target.parentElement.parentElement; // Contemplar clic en el icono también.
     const quantityInput = target.parentElement.querySelector('input[type=number]')
     if (isIncrease) {
         quantityInput.stepUp();
+        updateQuantity(quantityInput);
     } else {
         quantityInput.stepDown();
+        updateQuantity(quantityInput);
     }
+    return quantityInput;
+}
+
+function updateQuantity(input) {
+    const quantityInput = input;
     const quantity = quantityInput.value;
+    console.log(quantityInput.textContent);
     const targetFruit = quantityInput.id.replace(/-counter/, "");
     userCart[userCart.findIndex(item => item.item === targetFruit)].quantity = quantity;
     updateUsers();
