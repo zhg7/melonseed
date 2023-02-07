@@ -36,7 +36,7 @@ function showCatalog(isFeatured) {
         const { fruit, binomial, price, image } = availableFruits;
         featuredSection.innerHTML += `
     <div class="col">
-                        <div class="card">
+                        <div class="card" id="${fruit}">
                             <div class="img-container">
                                 <img src="/app/assets/images/fruits/${image}" class="card-img-top img-fluid"
                                 alt="${fruit}">
@@ -51,7 +51,7 @@ function showCatalog(isFeatured) {
                             <div class="card-body">
                                 <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                                 <div class="d-grid">
-                                    <button type="button" class="pink-btn rounded-pill"><i class="bi bi-cart-plus-fill"></i>
+                                    <button type="button" class="pink-btn rounded-pill add-to-cart"><i class="bi bi-cart-plus-fill"></i>
                                         Añadir</button>
                                 </div>
                             </div>
@@ -62,10 +62,17 @@ function showCatalog(isFeatured) {
     descriptionButtons.forEach(btn => {
         btn.addEventListener("click", getDescription)
     })
+    const addBtns = document.querySelectorAll(".add-to-cart");
+    addBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            addToCart(e.target.closest(".card").id);
+        })
+    })
+
 }
 
 function formatCurrency(price) {
-    const options = { style: 'currency', currency: 'EUR' };
+    const options = { style: 'currency', currency: 'EUR', useGrouping: false };
     const numberFormat = new Intl.NumberFormat('es-ES', options)
     return numberFormat.format(price);
 }
@@ -109,8 +116,24 @@ function setDescription(genericName, scientificName, description) {
     const modalFooter = document.querySelector("#descriptionModal .modal-footer");
     modalHeader.textContent = genericName;
     modalBody.textContent = description;
-    modalFooter.innerHTML = `<small>Exportadores: ${getCountryFlags(scientificName)}<small>`;
+    modalFooter.innerHTML = `<small>Exportadores: ${getCountryFlags(scientificName)}</small>`;
 }
+
+function addToCart(fruit) {
+    const users = JSON.parse(localStorage.getItem("users"));
+    const userCart = users.find(user => user.user === sessionStorage.getItem("logged_user")).cart;
+    if (userCart.some(item => item.item === fruit)) {
+        userCart[userCart.findIndex(item => item.item === fruit)].quantity += 1;
+    } else {
+        userCart.push({
+            "item": fruit,
+            "quantity": 1
+        });
+    }
+    updateUsers(users);
+}
+
+
 
 
 

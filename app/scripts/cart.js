@@ -117,7 +117,7 @@ function updateQuantity(input) {
     const targetFruit = quantityInput.id.replace(/-counter/, "");
     calculatePrice(input)
     userCart[userCart.findIndex(item => item.item === targetFruit)].quantity = quantity;
-    updateUsers();
+    updateUsers(users);
 }
 
 function removeItem(e) {
@@ -126,7 +126,7 @@ function removeItem(e) {
     userCart.splice(userCart.findIndex(item => item.item === fruitToRemove), 1);
     target.remove(target);
     calculateTotals();
-    updateUsers();
+    updateUsers(users);
 }
 
 function calculatePrice(input) {
@@ -145,7 +145,6 @@ function calculateTotals() {
     let subtotal = 0;
     amounts.forEach(amount => {
         subtotal += Number(amount.textContent.replace(/€/g, "").replace(/\,/g, "."));
-        console.log(amount.textContent)
     })
     subtotalField.firstElementChild.textContent = formatCurrency(subtotal);
     const vat = subtotal * 1.04 - subtotal;
@@ -153,9 +152,7 @@ function calculateTotals() {
     totalField.firstElementChild.textContent = formatCurrency(subtotal + vat);
 }
 
-function updateUsers() {
-    localStorage.setItem("users", JSON.stringify(users));
-}
+
 
 
 

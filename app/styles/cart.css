@@ -9,6 +9,10 @@ input[type=number] {
   appearance: textfield;
 }
 
-.bi-plus-circle, .bi-dash-circle {
+.bi-plus-circle, .bi-dash-circle, .bi-trash-fill {
   font-size: 1.45em;
+}
+
+.calcs {
+  background-color: #194429;
 }
