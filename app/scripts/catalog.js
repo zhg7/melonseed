@@ -51,8 +51,12 @@ function showCatalog(isFeatured) {
                             <div class="card-body">
                                 <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                                 <div class="d-grid">
-                                    <button type="button" class="pink-btn rounded-pill add-to-cart"><i class="bi bi-cart-plus-fill"></i>
-                                        Añadir</button>
+                                    <button type="button" class="cart-btn pink-btn rounded-pill">
+                                        <span class="add">Añadir</span>
+                                        <span class="added">Añadido</span>
+                                        <i class="bi bi-cart-fill"></i>
+                                        <i class="bi bi-box2-fill"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -62,10 +66,14 @@ function showCatalog(isFeatured) {
     descriptionButtons.forEach(btn => {
         btn.addEventListener("click", getDescription)
     })
-    const addBtns = document.querySelectorAll(".add-to-cart");
+    const addBtns = document.querySelectorAll(".cart-btn");
     addBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
+            btn.classList.add('clicked');    
             addToCart(e.target.closest(".card").id);
+            setTimeout(() => {
+                btn.classList.remove('clicked')
+            }, 2000)
         })
     })
 
