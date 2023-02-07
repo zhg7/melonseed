@@ -51,7 +51,7 @@ function showCatalog(isFeatured) {
                             <div class="card-body">
                                 <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                                 <div class="d-grid">
-                                    <button type="button" class="cart-btn pink-btn rounded-pill">
+                                    <button type="button" class="add-btn pink-btn rounded-pill">
                                         <span class="add">Añadir</span>
                                         <span class="added">Añadido</span>
                                         <i class="bi bi-cart-fill"></i>
@@ -66,16 +66,27 @@ function showCatalog(isFeatured) {
     descriptionButtons.forEach(btn => {
         btn.addEventListener("click", getDescription)
     })
-    const addBtns = document.querySelectorAll(".cart-btn");
-    addBtns.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            btn.classList.add('clicked');    
-            addToCart(e.target.closest(".card").id);
-            setTimeout(() => {
-                btn.classList.remove('clicked')
-            }, 2000)
+
+    const addBtns = document.querySelectorAll(".add-btn");
+    if (sessionStorage.getItem("logged_user") !== null) {
+        addBtns.forEach(btn => {
+            btn.removeAttribute("data-bs-toggle");
+            btn.removeAttribute("data-bs-target");
+            btn.addEventListener("click", (e) => {
+                btn.classList.add('clicked');
+                addToCart(e.target.closest(".card").id);
+                setTimeout(() => {
+                    btn.classList.remove('clicked')
+                }, 2000)
+            })
         })
-    })
+    } else {
+        addBtns.forEach(btn => {
+            btn.setAttribute("data-bs-toggle", "modal");
+            btn.setAttribute("data-bs-target", "#loginModal");
+        })
+    }
+
 
 }
 

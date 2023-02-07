@@ -118,17 +118,17 @@ button {
     }
 }
 
-.cart-btn {
+.add-btn {
     position: relative;
     transition: .3s ease-in-out;
     overflow: hidden;
 }
 
-.cart-btn:active {
+.add-btn:active {
     transform: scale(.9);
 }
 
-.cart-btn .bi-cart-fill {
+.add-btn .bi-cart-fill {
     position: absolute;
     top: 50%;
     left: -10%;
@@ -136,40 +136,40 @@ button {
     transform: translate(-50%, -50%);
 }
 
-.cart-btn .bi-box2-fill {
+.add-btn .bi-box2-fill {
     position: absolute;
-    top: -25%;
+    top: -30%;
     left: 52%;
     font-size: 1.2em;
     transform: translate(-50%, -50%);
 }
 
-.cart-btn span {
+.add-btn span {
     position: absolute;
     transform: translate(-50%, -50%);
 }
 
-.cart-btn span.add {
+.add-btn span.add {
     opacity: 1;
 }
 
-.cart-btn span.added {
+.add-btn span.added {
     opacity: 0;
 }
 
-.cart-btn.clicked .bi-cart-fill {
+.add-btn.clicked .bi-cart-fill {
     animation: cart 1.5s ease-in-out forwards;
 }
 
-.cart-btn.clicked .bi-box2-fill {
+.add-btn.clicked .bi-box2-fill {
     animation: box 1.5s ease-in-out forwards;
 }
 
-.cart-btn.clicked span.add {
+.add-btn.clicked span.add {
     animation: add 1.5s ease-in-out forwards;
 }
 
-.cart-btn.clicked span.added {
+.add-btn.clicked span.added {
     animation: added 1.5s ease-in-out forwards;
 }
 
@@ -192,7 +192,7 @@ button {
 
     0%,
     40% {
-        top: -25%;
+        top: -30%;
     }
 
     60% {
