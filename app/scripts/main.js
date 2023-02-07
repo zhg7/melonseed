@@ -1,12 +1,5 @@
 // Evitar acceso al carrito sin sesión.
 
-
-
-function cartClick() {
-	let button = this;
-	button.classList.add('clicked');
-}
-
 if (sessionStorage.getItem("logged_user") === null && location.href.includes("cart")) {
     location.href = "/";
 }
