@@ -2,7 +2,8 @@ html,
 body {
     font-family: 'Noto Sans', sans-serif;
     overflow-x: hidden;
-    padding-right: 0 !important; /* Eliminar padding indeseado modales */
+    padding-right: 0 !important;
+    /* Eliminar padding indeseado modales */
     scroll-behavior: smooth;
 }
 
@@ -97,6 +98,22 @@ button {
     display: inline-block;
     transform: rotateY(180deg);
 }
+
+.map-container {
+    height: 100%;
+ 
+  }
+  
+  .map-frame {
+    height: 100%;
+    width: 100%;
+    outline: 1px solid black;
+  }
+  
+  #map { 
+    height: calc(100vh - 100px);
+    width: 100%;
+  }
 
 @media screen and (min-width: 992px) {
     .link::after {
