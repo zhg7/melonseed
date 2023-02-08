@@ -59,31 +59,22 @@
             </div>
         </div>
     </nav>
-    <section>
-
+    <section class="content">
         <div class="container py-5">
-            <div class="row d-flex justify-content-center align-items-center">
+            <div class="row d-flex justify-content-center align-items-center" id="item-area">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-normal mb-0 text-black">Carrito de <span id="cart-user"></span></h3>
+                    <h1 class="fw-normal mb-0 text-black">Carrito</h1>
                 </div>
                 <div class="col-12">
                     <div class="cart-items">
                         <!-- AQUÍ LAS FRUTAS -->
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="card mb-4 calcs">
-                        <div class="card-body p-4 d-flex flex-lg-row flex-column justify-content-between text-light">
-                            <div>
-                                <p class="fs-5" id="subtotal">Subtotal: <span></span></p>
-                                <p id="vat">IVA (4%): <span></span></p>
-                            </div>
-                            <p class="fs-4" id="total">Total: <span></span></p>
-                            <button type="button"
-                                class="text-light rounded-pill green-btn text-center p-4 d-flex align-items-center justify-content-center">Comprar</button>
-                        </div>
-                    </div>
+                <div class="d-block text-center">
+                    <p style="font-size: 5rem">¯\_(ツ)_/¯</p>
+                    No hay nada aquí. Prueba a añadir algo.
                 </div>
+                <!--AQUÍ LOS CÁLCULOS-->
             </div>
         </div>
 
@@ -204,7 +195,7 @@
                             <input type="text" id="signupuser" class="form-control rounded-end"
                                 placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon">
                             <div class="invalid-feedback">
-                                Introduce un nombre de usuario válido.
+                                El nombre de usuario debe tener entre 4 y 12 carácteres alfanuméricos.
                             </div>
                         </div>
                         <div class="input-group mb-3">
@@ -212,7 +203,7 @@
                             <input type="password" id="signuppassword" class="form-control rounded-end"
                                 placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon">
                             <div class="invalid-feedback">
-                                Introduce una contraseña válida.
+                                La contraseña debe tener al menos 8 carácteres; 1 mayúscula, 1 minúscula y 1 número como mínimo.
                             </div>
                         </div>
                         <div class="input-group mb-3">

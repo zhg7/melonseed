@@ -9,9 +9,9 @@ const users = JSON.parse(localStorage.getItem("users"));
 const fruits = JSON.parse(localStorage.getItem("fruits"));
 const userCart = users.find(user => user.user === sessionStorage.getItem("logged_user")).cart;
 const itemList = document.querySelector(".cart-items");
+const itemArea = document.getElementById("item-area");
 
 getCartUser();
-showCartItems();
 
 const quantityInputs = document.querySelectorAll(`[id$="-counter"]`);
 const decreaseBtns = document.querySelectorAll(".decrease-counter");
@@ -43,14 +43,6 @@ quantityInputs.forEach(btn => {
         updateQuantity(e.target);
     })
 })
-
-
-function getCartUser() {
-    const username = sessionStorage.getItem("logged_user");
-    const userNameField = document.getElementById("cart-user");
-    userNameField.textContent = username;
-    return username;
-}
 
 function showCartItems() {
     userCart.forEach(item => {
@@ -87,6 +79,26 @@ function showCartItems() {
         </div>
     </div>`
     });
+    // Esconder esta sección cuando el carrito está vacío.
+    if (userCart.length !== 0) {
+        itemArea.innerHTML += `<div class="col-12 cart-info">
+        <div class="card mb-4 calcs">
+            <div class="card-body p-4 d-flex flex-lg-row flex-column justify-content-between text-light">
+                <div>
+                    <p class="fs-5" id="subtotal">Subtotal: <span></span></p>
+                    <p id="vat">IVA (4%): <span></span></p>
+                </div>
+                <p class="fs-4" id="total">Total: <span></span></p>
+                <button type="button"
+                    class="text-light rounded-pill green-btn text-center p-4 d-flex align-items-center justify-content-center">Comprar</button>
+            </div>
+        </div>
+    </div>`;
+    } else {
+        if (isCartEmpty()) {
+            itemArea.removeChild(itemArea.querySelector(".cart-info"));
+        }
+    }
 }
 
 function findFruit(fruitName) {
@@ -125,8 +137,17 @@ function removeItem(e) {
     const fruitToRemove = target.id;
     userCart.splice(userCart.findIndex(item => item.item === fruitToRemove), 1);
     target.remove(target);
-    calculateTotals();
+    if (isCartEmpty()) {
+        itemArea.removeChild(itemArea.querySelector(".cart-info"));
+    } else {
+        calculateTotals();
+    }
+
     updateUsers(users);
+}
+
+function isCartEmpty() {
+    return userCart.length === 0 && itemArea.querySelector(".cart-info") !== nulls;
 }
 
 function calculatePrice(input) {
