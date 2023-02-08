@@ -1,29 +1,53 @@
-let mapOptions = {  center: [40.4165, -3.70256],
-    zoom: 13
+const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  
+  const crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+
+  showMap(crd.latitude, crd.longitude)
+  //get the distance between two points
+ 
+
+  //display the result
+
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+  showMap()
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+function showMap(latitude = 40.4839361, longitude = -3.5679515) {
+  const mapOptions = {
+    center: [latitude, longitude],
+    zoom: 5
   }
-  let map = new L.map('map', mapOptions),
-  layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+  const map = new L.map('map', mapOptions);
+  const layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
   map.addLayer(layer);
 
-  let
-  _firstLatLng = [40.4165, -3.70256], //holding first marker latitude and longitude
-  _secondLatLng = [40.3536054, -3.5310879],//holding second marker latitude and longitude
-  _polyline,    //holding polyline object
-  markerA= null,
-  markerB = null;
-
-  markerA = L.marker(_firstLatLng).addTo(map).bindPopup('Point A<br/>' + _firstLatLng).openPopup();
-  markerB = L.marker(_secondLatLng).addTo(map).bindPopup('Point B<br/>' + _secondLatLng).openPopup();
-
-  _polyline = L.polyline([_firstLatLng, _secondLatLng], {
+  const origin = [latitude, longitude];
+  const destination = [44.244167, 7.769444]
+  const markerOrigin = L.marker(origin).addTo(map).bindPopup('Point A<br/>' + origin).openPopup();
+  const markerDestination = L.marker(destination).addTo(map).bindPopup('Point B<br/>' + destination).openPopup();
+  const polyline = L.polyline([origin, destination], {
     color: 'red'
-});
+  });
+  polyline.addTo(map);
 
-_polyline.addTo(map);
-
-//get the distance between two points
-let _length = map.distance(_firstLatLng, _secondLatLng);
-
-//display the result
+  let _length = map.distance(origin, destination);
+  document.getElementById("distance").textContent = (_length / 1000).toFixed(1);
+}
 
 
