@@ -9,7 +9,9 @@ input[type=number] {
   appearance: textfield;
 }
 
-.bi-plus-circle, .bi-dash-circle, .bi-trash-fill {
+.bi-plus-circle,
+.bi-dash-circle,
+.bi-trash-fill {
   font-size: 1.45em;
 }
 

@@ -11,7 +11,7 @@ const userCart = users.find(user => user.user === sessionStorage.getItem("logged
 const itemList = document.querySelector(".cart-items");
 const itemArea = document.getElementById("item-area");
 
-getCartUser();
+showCartItems();
 
 const quantityInputs = document.querySelectorAll(`[id$="-counter"]`);
 const decreaseBtns = document.querySelectorAll(".decrease-counter");
@@ -43,6 +43,8 @@ quantityInputs.forEach(btn => {
         updateQuantity(e.target);
     })
 })
+
+
 
 function showCartItems() {
     userCart.forEach(item => {
@@ -147,7 +149,7 @@ function removeItem(e) {
 }
 
 function isCartEmpty() {
-    return userCart.length === 0 && itemArea.querySelector(".cart-info") !== nulls;
+    return userCart.length === 0 && itemArea.querySelector(".cart-info") !== null;
 }
 
 function calculatePrice(input) {
