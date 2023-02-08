@@ -1,53 +1,52 @@
-const options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+navigator.geolocation.getCurrentPosition(getPosition);
 
-function success(pos) {
-  
-  const crd = pos.coords;
-
-  console.log('Your current position is:');
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
-
-  showMap(crd.latitude, crd.longitude)
-  //get the distance between two points
- 
-
-  //display the result
-
+function getPosition(pos) {
+  const coords = pos.coords;
+  showMap(coords.latitude, coords.longitude)
 }
 
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-  showMap()
-}
-
-navigator.geolocation.getCurrentPosition(success, error, options);
-
-function showMap(latitude = 40.4839361, longitude = -3.5679515) {
+function showMap(latitude = 40.416729, longitude = -3.703339) {
   const mapOptions = {
     center: [latitude, longitude],
     zoom: 5
   }
-  const map = new L.map('map', mapOptions);
-  const layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+  const melonIcon = L.icon({
+    iconUrl: '/app/assets/images/logo/melon.svg',
+    iconSize: [38, 38]
+  });
+
+  const map = new L.map("map", mapOptions);
+  const layer = new L.TileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
   map.addLayer(layer);
 
   const origin = [latitude, longitude];
   const destination = [44.244167, 7.769444]
-  const markerOrigin = L.marker(origin).addTo(map).bindPopup('Point A<br/>' + origin).openPopup();
-  const markerDestination = L.marker(destination).addTo(map).bindPopup('Point B<br/>' + destination).openPopup();
+  L.marker(origin).addTo(map).bindPopup(`<b>Tú</b><br> ${origin}`).openPopup();
+  L.marker(destination, { icon: melonIcon }).addTo(map).bindPopup(`<b>Melonseed</b><br> ${destination}`).openPopup();
   const polyline = L.polyline([origin, destination], {
-    color: 'red'
+    color: '#db4437',
+    weight: 4
   });
   polyline.addTo(map);
 
-  let _length = map.distance(origin, destination);
-  document.getElementById("distance").textContent = (_length / 1000).toFixed(1);
+  const distance = map.distance(origin, destination);
+  document.getElementById("distance").textContent = (distance / 1000).toFixed(1);
+  getLocation(latitude, longitude).then((result) => displayLocation(result));
+}
+
+async function getLocation(latitude, longitude) {
+  const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`);
+  const result = await response.json();
+  return result;
+}
+
+function displayLocation(address) {
+  const addressField = document.getElementById("location");
+  const { address: { road, city, postcode, country } } = address;
+  addressField.textContent = `${road}, ${city}, ${postcode}, ${country}`;
 }
 
 
