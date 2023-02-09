@@ -1,6 +1,6 @@
 navigator.geolocation.getCurrentPosition(getPosition, () => {
   showMap();
-});
+}, {enableHighAccuracy: true});
 
 function getPosition(pos) {
   const coords = pos.coords;

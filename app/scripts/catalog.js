@@ -34,33 +34,33 @@ function showCatalog(isFeatured) {
     const fruitsToShow = isFeatured ? featuredFruits : availableFruits;
     fruitsToShow.forEach(availableFruits => {
         const { fruit, binomial, price, image } = availableFruits;
-        featuredSection.innerHTML += `
-    <div class="col">
-                        <div class="card" id="${fruit}">
-                            <div class="img-container">
-                                <img src="/app/assets/images/fruits/${image}" class="card-img-top img-fluid"
-                                alt="${fruit}">
-                            <div class="overlay text-light text-center">
-                                <h2 class="pt-4">${fruit}</h2>
-                                <p class="fst-italic fs-5">${binomial}</p>
-                                <button type="button"
-                            class="text-light green-btn rounded-pill text-center px-4 description-trigger" data-bs-toggle="modal"
-                            data-bs-target="#descriptionModal">Más info.</button>
-                            </div>
-                            </div>     
-                            <div class="card-body">
-                                <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
-                                <div class="d-grid">
-                                    <button type="button" class="add-btn pink-btn rounded-pill">
-                                        <span class="add">Añadir</span>
-                                        <span class="added">Añadido</span>
-                                        <i class="bi bi-cart-fill"></i>
-                                        <i class="bi bi-box2-fill"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+        featuredSection.insertAdjacentHTML("beforeend", `<div class="col">
+        <div class="card" id="${fruit}">
+            <div class="img-container">
+                <img src="/app/assets/images/fruits/${image}" class="card-img-top img-fluid"
+                alt="${fruit}">
+            <div class="overlay text-light text-center">
+                <h2 class="pt-4">${fruit}</h2>
+                <p class="fst-italic fs-5">${binomial}</p>
+                <button type="button"
+            class="text-light green-btn rounded-pill text-center px-4 description-trigger" data-bs-toggle="modal"
+            data-bs-target="#descriptionModal">Más info.</button>
+            </div>
+            </div>     
+            <div class="card-body">
+                <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
+                <div class="d-grid">
+                    <button type="button" class="add-btn pink-btn rounded-pill">
+                        <span class="add">Añadir</span>
+                        <span class="added">Añadido</span>
+                        <i class="bi bi-cart-fill"></i>
+                        <i class="bi bi-box2-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>`)
+
     })
     const descriptionButtons = document.querySelectorAll(".description-trigger");
     descriptionButtons.forEach(btn => {

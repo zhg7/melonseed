@@ -51,7 +51,7 @@ function showCartItems() {
         const targetFruit = findFruit(item.item);
         const { quantity } = item;
         const { fruit, price, image } = targetFruit;
-        itemList.innerHTML += `<div class="card rounded-3 mb-4 text-light" id="${fruit}">
+        itemList.insertAdjacentHTML("beforeend", `<div class="card rounded-3 mb-4 text-light" id="${fruit}">
         <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2">
@@ -79,11 +79,11 @@ function showCartItems() {
                 </div>
             </div>
         </div>
-    </div>`
+    </div>`);
     });
     // Esconder esta sección cuando el carrito está vacío.
     if (userCart.length !== 0) {
-        itemArea.innerHTML += `<div class="col-12 cart-info">
+        itemArea.insertAdjacentHTML("beforeend", `<div class="col-12 cart-info">
         <div class="card mb-4 calcs">
             <div class="card-body p-4 d-flex flex-lg-row flex-column justify-content-between text-light">
                 <div>
@@ -95,7 +95,7 @@ function showCartItems() {
                     class="text-light rounded-pill green-btn text-center p-4 d-flex align-items-center justify-content-center">Comprar</button>
             </div>
         </div>
-    </div>`;
+    </div>`);
     } else {
         if (isCartEmpty()) {
             itemArea.removeChild(itemArea.querySelector(".cart-info"));
