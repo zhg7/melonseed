@@ -1,6 +1,6 @@
 navigator.geolocation.getCurrentPosition(getPosition, () => {
   showMap();
-}, {enableHighAccuracy: true});
+}, { enableHighAccuracy: true });
 
 function getPosition(pos) {
   const coords = pos.coords;
@@ -10,7 +10,8 @@ function getPosition(pos) {
 function showMap(latitude = 40.416729, longitude = -3.703339) {
   const mapOptions = {
     center: [latitude, longitude],
-    zoom: 5
+    zoom: 5,
+    attributionControl: false
   }
 
   const melonIcon = L.icon({
@@ -19,9 +20,7 @@ function showMap(latitude = 40.416729, longitude = -3.703339) {
   });
 
   const map = new L.map("map", mapOptions);
-  const layer = new L.TileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  });
+  const layer = new L.TileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png');
   map.addLayer(layer);
 
   const origin = [latitude, longitude];

@@ -14,6 +14,13 @@
         "image": "avocados.jpg"
     },
     {
+        "fruit": "Mandarinas",
+		"binomial" : "Citrus reticulata",
+        "price": 1.62,
+        "origin": ["es", "pe", "tr"],
+        "image": "tangerines.jpg"
+    },
+    {
         "fruit": "Plátanos",
 		"binomial" : "Musa × paradisiaca",
         "price": 2.15,
@@ -26,6 +33,13 @@
         "price": 11.18,
         "origin": ["us", "ca", "lv"],
         "image": "blueberries.jpg"
+    },
+    {
+        "fruit": "Moras",
+		"binomial" : "Morus alba",
+        "price": 14.20,
+        "origin": ["pt", "us", "es"],
+        "image": "blackberries.jpg"
     },
     {
         "fruit": "Carambolas",
@@ -47,6 +61,13 @@
         "price": 14.18,
         "origin": ["id", "in", "ph"],
         "image": "coconuts.jpg"
+    },
+    {
+        "fruit": "Kiwis",
+		"binomial" : "Actinidia deliciosa",
+        "price": 3.54,
+        "origin": ["ir", "nz", "fr"],
+        "image": "kiwis.jpg"
     },
     {
         "fruit": "Pitahayas",
