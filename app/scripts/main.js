@@ -1,3 +1,5 @@
+"use strict";
+
 // Evitar acceso al carrito sin sesión.
 const currentUser = sessionStorage.getItem("logged_user");
 
@@ -35,3 +37,19 @@ function updateUsers(users) {
 
 // Notificaciones
 Notification.requestPermission();
+
+// Búsqueda
+const searchBtn = document.querySelector(".search-btn");
+const searchText = document.querySelector(".search-text");
+
+searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    sendSearchQuery()
+})
+
+function sendSearchQuery() {
+    if (searchText.value.trim() !== "") {
+        const path = location.pathname === "/" || location.pathname === "/index.html" ? "/app/" : "";
+        location.href = `${path}catalog.html?query=${searchText.value.trim()}`;
+    }
+}

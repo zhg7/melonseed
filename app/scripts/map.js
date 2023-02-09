@@ -1,3 +1,5 @@
+"use strict";
+
 navigator.geolocation.getCurrentPosition(getPosition, () => {
   showMap();
 }, { enableHighAccuracy: true });

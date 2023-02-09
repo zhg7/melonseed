@@ -2,6 +2,7 @@
 
 const JSON_FILE = "/app/db/fruits.json";
 const FRUITS_TO_FEATURE = ["Higos", "Fresas", "Sandías", "Piñas", "Melocotones", "Mangos"];
+const queryString = location.search;
 
 let availableFruits;
 let featuredFruits;
@@ -31,11 +32,17 @@ function getFeaturedFruits(fruitsToFeature) {
 
 function showCatalog(isFeatured) {
     const featuredSection = document.querySelector(".featured-fruits");
-    const fruitsToShow = isFeatured ? featuredFruits : availableFruits;
+    let fruitsToShow = isFeatured ? featuredFruits : availableFruits;
+    if (queryString !== "") {
+        const matchedFruits = availableFruits.filter(item => normalizeString(item.fruit.toLowerCase()).includes(getSearchString()));
+        if (matchedFruits.length > 0) {
+            fruitsToShow = matchedFruits;
+        }
+    }
     fruitsToShow.forEach(availableFruits => {
         const { fruit, binomial, price, image } = availableFruits;
         featuredSection.insertAdjacentHTML("beforeend", `<div class="col">
-        <div class="card" id="${fruit}">
+        <div class="card ${fruit.toLowerCase()}" id="${fruit}">
             <div class="img-container">
                 <img src="/app/assets/images/fruits/${image}" class="card-img-top img-fluid"
                 alt="${fruit}">
@@ -86,8 +93,6 @@ function showCatalog(isFeatured) {
             btn.setAttribute("data-bs-target", "#loginModal");
         })
     }
-
-
 }
 
 function formatCurrency(price) {
@@ -110,6 +115,10 @@ function getCountryFlags(scientificName) {
         countries.push(`<img src="https://flagcdn.com/16x12/${country}.png"> ${getCountryName(country)}`);
     })
     return countries.join(" / ");
+}
+
+function normalizeString(string) {  // Eliminar tildes y eñes
+    return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 // Wikipedia API
@@ -151,6 +160,13 @@ function addToCart(fruit) {
     }
     updateUsers(users);
 }
+
+function getSearchString() {
+    const urlParams = new URLSearchParams(queryString);
+    const stringToSearch = urlParams.get("query").toLowerCase();
+    return normalizeString(stringToSearch);
+}
+
 
 
 
