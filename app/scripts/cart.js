@@ -10,6 +10,7 @@ const fruits = JSON.parse(localStorage.getItem("fruits"));
 const userCart = users.find(user => user.user === sessionStorage.getItem("logged_user")).cart;
 const itemList = document.querySelector(".cart-items");
 const itemArea = document.getElementById("item-area");
+const placeholder = document.querySelector(".empty-cart-placeholder");
 
 showCartItems();
 
@@ -83,6 +84,7 @@ function showCartItems() {
     });
     // Esconder esta sección cuando el carrito está vacío.
     if (userCart.length !== 0) {
+        placeholder.classList.add("d-none");
         itemArea.insertAdjacentHTML("beforeend", `<div class="col-12 cart-info">
         <div class="card mb-4 calcs">
             <div class="card-body p-4 d-flex flex-lg-row flex-column justify-content-between text-light">
@@ -98,6 +100,7 @@ function showCartItems() {
     </div>`);
     } else {
         if (isCartEmpty()) {
+            placeholder.classList.add("d-block");
             itemArea.removeChild(itemArea.querySelector(".cart-info"));
         }
     }
@@ -140,6 +143,7 @@ function removeItem(e) {
     userCart.splice(userCart.findIndex(item => item.item === fruitToRemove), 1);
     target.remove(target);
     if (isCartEmpty()) {
+        placeholder.classList.remove("d-none");
         itemArea.removeChild(itemArea.querySelector(".cart-info"));
     } else {
         calculateTotals();
