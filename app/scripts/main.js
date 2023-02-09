@@ -1,6 +1,7 @@
 // Evitar acceso al carrito sin sesión.
+const currentUser = sessionStorage.getItem("logged_user");
 
-if (sessionStorage.getItem("logged_user") === null && location.href.includes("cart")) {
+if (currentUser === null && location.href.includes("cart")) {
     location.href = "/";
 }
 
@@ -8,7 +9,7 @@ if (!location.href.includes("cart")) {
     const cartBtn = document.getElementById("cart-btn");
     const cartPath = cartBtn.getAttribute("href");
 
-    if (sessionStorage.getItem("logged_user") === null) {
+    if (currentUser === null) {
         cartBtn.setAttribute("data-bs-toggle", "modal");
         cartBtn.setAttribute("data-bs-target", "#loginModal");
         cartBtn.setAttribute("href", "#");
@@ -17,6 +18,14 @@ if (!location.href.includes("cart")) {
         cartBtn.removeAttribute("data-bs-target");
         cartBtn.setAttribute("href", cartPath);
     }
+}
+
+// Habilitar dropdown cuando se ha iniciado sesión
+if (currentUser !== null) {
+    const sessionBtn = document.querySelector(".session")
+    const usernameField = document.querySelector(".username");
+    sessionBtn.setAttribute("data-bs-toggle", "dropdown");
+    usernameField.textContent = currentUser;
 }
 
 function updateUsers(users) {

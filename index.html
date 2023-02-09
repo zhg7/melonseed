@@ -48,8 +48,20 @@
                         <a class="link nav-link text-light" href="app/catalog.html">Catálogo</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="link nav-link text-light" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar
-                            sesión</a>
+                        <div class="dropdown">
+                            <a class="link nav-link text-light session" data-bs-toggle="modal" aria-expanded="false"
+                                data-bs-target="#loginModal">Iniciar
+                                sesión</a>
+                            <ul class="dropdown-menu">
+                                <li><span class="dropdown-header"><i class="bi bi-person-circle"> </i><span
+                                            class="username"></span></span></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Cerrar
+                                        sesión</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item mx-2">
                         <a href="app/cart.html" class="nav-link text-light rounded-pill green-btn text-center px-4"
@@ -126,7 +138,8 @@
                         <span class="m-2">Cargando mapa...</span>
                     </div>
                     <div class="card-footer">
-                        <p class="card-text text-light"><b>Tu ubicación: </b><span id="location" class="placeholder-glow">
+                        <p class="card-text text-light"><b>Tu ubicación: </b><span id="location"
+                                class="placeholder-glow">
                                 <span class="placeholder col-6"></span>
                                 <span class="placeholder col-2"></span>
                                 <span class="placeholder col-3"></span>
@@ -261,7 +274,8 @@
                             <input type="password" id="signuppassword" class="form-control rounded-end"
                                 placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon">
                             <div class="invalid-feedback">
-                                La contraseña debe tener al menos 8 carácteres; 1 mayúscula, 1 minúscula y 1 número como mínimo.
+                                La contraseña debe tener al menos 8 carácteres; 1 mayúscula, 1 minúscula y 1 número como
+                                mínimo.
                             </div>
                         </div>
                         <div class="input-group mb-3">
