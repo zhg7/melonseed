@@ -72,7 +72,7 @@ if (navigator.userAgent.includes("Chrome")) {     // No funciona en Firefox, por
 
 function getTranscript(result) {
     const finalText = result[0].transcript;
-    searchText.value = finalText;
+    searchText.value = finalText.replace(/[\.,]/g, ""); // Eliminar posibles signos de puntuación.
     setTimeout(() => {
         searchBtn.click();
     }, 800);
