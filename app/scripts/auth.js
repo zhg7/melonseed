@@ -95,7 +95,7 @@ function createUser(user, password) {
     const newUser = {
         "user": user.toLowerCase(),
         "password": password,
-        "cart" : []
+        "cart": []
     }
 
     const users = JSON.parse(localStorage.getItem("users"));
@@ -134,5 +134,14 @@ function createSession(user) {
         location.reload();
     }, 950);
 
+}
+
+// Cierre de sesión
+const logoutBtn = document.querySelector(".logout");
+logoutBtn.addEventListener("click", destroySession);
+
+function destroySession() {
+    sessionStorage.clear();
+    location.reload();
 }
 
