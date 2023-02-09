@@ -101,6 +101,7 @@ function createUser(user, password) {
     const users = JSON.parse(localStorage.getItem("users"));
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
+    showNotification(false, newUser.user);
 }
 
 // Inicio de sesión
@@ -129,11 +130,20 @@ function validateLogin(e) {
 }
 
 function createSession(user) {
+    showNotification(true, user);
     sessionStorage.setItem("logged_user", user);
     setTimeout(() => {
         location.reload();
     }, 950);
 
+}
+
+function showNotification(isLogin, userName) {
+    if (Notification.permission === "granted") {
+        const title = isLogin ? "Inicio de sesión" : "Alta de usuario";
+        const body = isLogin ? `¡Bienvenido, ${userName}!` : `¡Gracias por registrarte, ${userName}!`;
+        new Notification(title, { body })
+    }
 }
 
 // Cierre de sesión
