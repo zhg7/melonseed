@@ -34,7 +34,7 @@ function showCatalog(isFeatured) {
     const featuredSection = document.querySelector(".featured-fruits");
     let fruitsToShow = isFeatured ? featuredFruits : availableFruits;
     if (queryString !== "") {
-        const matchedFruits = availableFruits.filter(item => normalizeString(item.fruit.toLowerCase()).includes(getSearchString()));
+        const matchedFruits = availableFruits.filter(item => normalizeString(item.fruit.toLowerCase()).includes(getSearchString()) || getSearchString().includes(normalizeString(item.fruit.toLowerCase())));
         if (matchedFruits.length > 0) {
             fruitsToShow = matchedFruits;
         }

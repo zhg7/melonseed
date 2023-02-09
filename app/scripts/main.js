@@ -48,8 +48,36 @@ searchBtn.addEventListener("click", (e) => {
 })
 
 function sendSearchQuery() {
-    if (searchText.value.trim() !== "") {
-        const path = location.pathname === "/" || location.pathname === "/index.html" ? "/app/" : "";
-        location.href = `${path}catalog.html?query=${searchText.value.trim()}`;
-    }
+    const path = location.pathname === "/" || location.pathname === "/index.html" ? "/app/" : "";
+    location.href = `${path}catalog.html?query=${searchText.value.trim()}`;
 }
+
+// Reconocimiento de voz
+const micBtn = document.querySelector(".mic-btn");
+if (navigator.userAgent.includes("Chrome")) {     // No funciona en Firefox, por el momento.
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'es-ES';
+    micBtn.addEventListener("click", () => {
+        micBtn.innerHTML = `<div class="spinner-grow spinner-grow-sm text-secondary" role="status">
+        <span class="visually-hidden">Escuchando...</span>
+      </div>`;
+        recognition.start();
+    });
+
+    recognition.addEventListener("result", (e) => {
+        getTranscript(e.results[0]);
+    })
+}
+
+function getTranscript(result) {
+    const finalText = result[0].transcript;
+    searchText.value = finalText;
+    setTimeout(() => {
+        searchBtn.click();
+    }, 800);
+}
+
+
+
+
