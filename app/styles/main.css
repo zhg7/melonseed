@@ -50,15 +50,21 @@ button {
     max-width: 10em;
 }
 
+.red-btn {
+    background: linear-gradient(to right, #ed4c3e 50%, #DB4437 50%);
+}
+
 .pink-btn,
-.green-btn {
+.green-btn,
+.red-btn {
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .35s ease-out;
 }
 
 .pink-btn:hover,
-.green-btn:hover {
+.green-btn:hover,
+.red-btn:hover {
     background-position: left bottom;
 }
 

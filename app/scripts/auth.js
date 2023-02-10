@@ -79,12 +79,12 @@ function provideFeedback(field, isError) {
 function showSubmitResult(isLogin, form, username) {
     if (!isLogin) {
         form.lastElementChild.innerHTML = `<div class="mt-2 alert alert-success alert-dismissible fade show" role="success">
-    Se ha creado el usuario <b>${username}</b> exitosamente.
+        <i class="bi bi-check-circle-fill"> </i>Se ha creado el usuario <b>${username}</b> exitosamente.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>`
     } else {
         form.lastElementChild.innerHTML = `<div class="mt-2 alert alert-success alert-dismissible fade show" role="success">
-    Has iniciado sesión como <b>${username}</b> exitosamente.
+        <i class="bi bi-check-circle-fill"> </i>Has iniciado sesión como <b>${username}</b> exitosamente.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>`
     }

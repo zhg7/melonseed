@@ -10,6 +10,7 @@ const fruits = JSON.parse(localStorage.getItem("fruits"));
 const userCart = users.find(user => user.user === sessionStorage.getItem("logged_user")).cart;
 const itemList = document.querySelector(".cart-items");
 const itemArea = document.getElementById("item-area");
+const cartContent = document.querySelector(".cart-content");
 const placeholder = document.querySelector(".empty-cart-placeholder");
 
 showCartItems();
@@ -82,9 +83,10 @@ function showCartItems() {
         </div>
     </div>`);
     });
-    // Esconder esta sección cuando el carrito está vacío.
     if (userCart.length !== 0) {
         placeholder.classList.add("d-none");
+        cartContent.insertAdjacentHTML("afterbegin", `<button type="button" class="red-btn rounded-pill px-4 mb-3 text-light empty-btn"><i
+        class="bi bi-cart-x-fill"> </i>Vaciar carrito</button>`);
         itemArea.insertAdjacentHTML("beforeend", `<div class="col-12 cart-info">
         <div class="card mb-4 calcs">
             <div class="card-body p-4 d-flex flex-lg-row flex-column justify-content-between text-light">
@@ -98,7 +100,8 @@ function showCartItems() {
             </div>
         </div>
     </div>`);
-    } else {
+        cartContent.querySelector(".empty-btn").addEventListener("click", emptyCart);
+    } else {    // Esconder esta sección cuando el carrito está vacío.
         if (isCartEmpty()) {
             placeholder.classList.add("d-block");
             itemArea.removeChild(itemArea.querySelector(".cart-info"));
@@ -145,11 +148,18 @@ function removeItem(e) {
     if (isCartEmpty()) {
         placeholder.classList.remove("d-none");
         itemArea.removeChild(itemArea.querySelector(".cart-info"));
+        cartContent.removeChild(cartContent.firstElementChild);
     } else {
         calculateTotals();
     }
 
     updateUsers(users);
+}
+
+function emptyCart() {
+    userCart.length = 0;
+    updateUsers(users);
+    location.reload();
 }
 
 function isCartEmpty() {
