@@ -80,6 +80,15 @@ function getTranscript(result) {
     }, 800);
 }
 
+// Cierre de sesión
+const logoutBtn = document.querySelector(".logout");
+logoutBtn.addEventListener("click", destroySession);
+
+function destroySession() {
+    sessionStorage.clear();
+    location.reload();
+}
+
 
 
 

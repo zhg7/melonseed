@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
@@ -68,8 +69,8 @@
                     <div class="input-group my-md-2 my-1">
                         <button class="green-btn text-light rounded-start-pill p-3 d-flex align-items-center search-btn"
                             type="submit"><i class="bi bi-search"></i></button>
-                        <input class="form-control search-text shadow-none border border-end-0" type="search" placeholder="Escribe algo..."
-                            aria-label="Search">
+                        <input class="form-control search-text shadow-none border border-end-0" type="search"
+                            placeholder="Escribe algo..." aria-label="Search">
                         <button class="bg-white text-black rounded-end-pill p-3 d-flex align-items-center mic-btn"
                             type="button"><i class="bi bi-mic-fill"></i></button>
                     </div>
@@ -77,33 +78,21 @@
             </div>
         </div>
     </nav>
+    <!--Catálogo-->
     <section class="container-fluid content p-lg-5">
         <h1 class="important-section">Catálogo<span class="fs-4 match-string"></span></h1>
         <div class="row">
             <div class="col-12">
                 <div class="row row-cols-1 row-cols-md-3 g-4 featured-fruits">
-
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="container text-center">
-                    <div class="col">
-                        <div class="col"></div>
-                        <div class="col">
-
-                        </div>
-                    </div>
+                    <!--Área de frutas-->
                 </div>
             </div>
         </div>
     </section>
+    <!--Pie de página-->
     <footer class="text-center text-lg-start text-light">
-
-        <!-- Grid row -->
         <div class="row mt-0 p-3">
-            <!-- Grid column -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <!-- Content -->
                 <h5 class="text-uppercase fw-bold mb-4">
                     Acerca de
                 </h5>
@@ -111,11 +100,7 @@
                     Melonseed es una tienda dedicada a la venta de una gran variedad de frutas.
                 </p>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <!-- Links -->
                 <h5 class="text-uppercase fw-bold mb-4">
                     Enlaces de interés
                 </h5>
@@ -132,36 +117,25 @@
                     <i class="bi bi-bag-fill"></i> <a href="#!" class="text-reset">Condiciones de venta</a>
                 </p>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <!-- Links -->
                 <h5 class="text-uppercase fw-bold mb-4">Contacto</h5>
                 <p><i class="bi bi-geo-alt-fill"></i> 44°14'39.0"N 7°46'10.0"E</p>
                 <p>
                     <i class="bi bi-envelope-at-fill"></i>
-                    ayuda@melon.seed
+                    <a class="text-light text-decoration-none" href="mailto:ayuda@melon.seed">ayuda@melon.seed</a>
                 </p>
-                <p><i class="bi bi-telephone-fill"></i> 778 537 972</p>
+                <p>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a class="text-light text-decoration-none" href="tel:+34778537972">778 537 972</a>
+                </p>
             </div>
-            <!-- Grid column -->
         </div>
-        <!-- Grid row -->
-
-
-        <!-- Section: Links  -->
-
-        <!-- Copyright -->
         <div class="text-center p-4 footer-bottom">
             <span class="copyleft">©</span> 2023 Copyleft:
             <a class="text-reset fw-bold" href="#">Melonseed</a>
         </div>
-        <!-- Copyright -->
     </footer>
-    <!-- Footer -->
-
-    <!-- Modals -->
+    <!-- Modal de login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -199,6 +173,7 @@
             </div>
         </div>
     </div>
+    <!--Modal de registro-->
     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -245,6 +220,7 @@
             </div>
         </div>
     </div>
+    <!--Modal de descripción de fruta-->
     <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
@@ -261,6 +237,7 @@
             </div>
         </div>
     </div>
+    <!--Toast de consentimiento de cookies-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast cookie" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
