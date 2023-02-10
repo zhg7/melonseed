@@ -58,8 +58,8 @@ function showCatalog(isFeatured) {
                 <h4 class="text-light text-center">${formatCurrency(price)}/kg</h4>
                 <div class="d-grid">
                     <button type="button" class="add-btn pink-btn rounded-pill">
-                        <span class="add">Añadir</span>
-                        <span class="added">Añadido</span>
+                        <span class="add"><i class="bi bi-cart-plus-fill"> </i>Añadir</span>
+                        <span class="added"><i class="bi bi-cart-check-fill"> </i>Añadido</span>
                         <i class="bi bi-cart-fill"></i>
                         <i class="bi bi-box2-fill"></i>
                     </button>
