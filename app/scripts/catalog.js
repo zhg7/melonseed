@@ -32,9 +32,11 @@ function getFeaturedFruits(fruitsToFeature) {
 
 function showCatalog(isFeatured) {
     const featuredSection = document.querySelector(".featured-fruits");
+    const matchString = document.querySelector(".match-string");
     let fruitsToShow = isFeatured ? featuredFruits : availableFruits;
     if (queryString !== "") {
-        const matchedFruits = availableFruits.filter(item => normalizeString(item.fruit.toLowerCase()).includes(getSearchString()) || getSearchString().includes(normalizeString(item.fruit.toLowerCase())));
+        const matchedFruits = availableFruits.filter(item => normalizeString(item.fruit.toLowerCase()).includes(normalizeString(getSearchString())));
+        matchString.textContent = ` / Coincidencias para "${getSearchString()}"`
         if (matchedFruits.length > 0) {
             fruitsToShow = matchedFruits;
         }
@@ -164,7 +166,7 @@ function addToCart(fruit) {
 function getSearchString() {
     const urlParams = new URLSearchParams(queryString);
     const stringToSearch = urlParams.get("query").toLowerCase();
-    return normalizeString(stringToSearch);
+    return stringToSearch;
 }
 
 
