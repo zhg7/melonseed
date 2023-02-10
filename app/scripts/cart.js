@@ -57,7 +57,7 @@ function showCartItems() {
         <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2">
-                    <img src="assets/images/fruits/${image}" class="img-fluid rounded-3" alt="">
+                    <img src="assets/images/fruits/${image}" class="img-fluid rounded-3 fruit-img" alt="${fruit}">
                 </div>
                 <div class="col-md-3">
                     <p class="fs-4 fw-normal mb-2">${fruit}</p>

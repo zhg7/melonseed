@@ -73,6 +73,11 @@ button {
     object-fit: cover;
 }
 
+.fruit-img {
+    height: 15vh;
+    object-fit: cover;
+}
+
 .img-container {
     position: relative;
 }
