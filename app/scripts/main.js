@@ -49,7 +49,9 @@ searchBtn.addEventListener("click", (e) => {
 
 function sendSearchQuery() {
     const path = location.pathname === "/" || location.pathname === "/index.html" ? "/app/" : "";
-    location.href = `${path}catalog.html?query=${searchText.value.trim()}`;
+    if (searchText.value.trim() !== "") {
+        location.href = `${path}catalog.html?query=${searchText.value.trim()}`;
+    }
 }
 
 // Reconocimiento de voz
