@@ -65,11 +65,11 @@ function showCartItems() {
                 </div>
                 <div class="col-md-3 col-xl-2">
                     <div class="btn-group" role="group" aria-label="Subir y bajar">
-                        <button type="button" class="btn pink-btn decrease-counter"><i
+                        <button type="button" class="btn pink-btn rounded-start-pill p-2 decrease-counter"><i
                                 class="bi bi-dash-circle d-flex"></i></button>
                         <input id="${fruit}-counter" min="1" name="quantity" value="${quantity}" type="number"
                             class="form-control form-control-sm shadow-none ml-5 text-center rounded-0 fs-5"/>
-                        <button type="button" class="btn pink-btn increase-counter"><i
+                        <button type="button" class="btn pink-btn rounded-end-circle p-2 increase-counter"><i
                                 class="bi bi-plus-circle d-flex"></i></button>
                     </div>
                 </div>
