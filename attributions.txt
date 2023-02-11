@@ -3,132 +3,156 @@ Este prototipo está bajo la licencia GNU General Public License v3.0 cuya equiv
 Este proyecto ha sido posible gracias a los trabajos de las siguientes personas y organizaciones:
 
 ## Imágenes ##
-Todas las imágenes de las frutas provienen de Flickr (https://www.flickr.com/).
 
 ** Catálogo **
 • Fresas
     - Archivo: strawberries.jpg
     - Autor: kahvikisu
+    - Enlace: https://www.flickr.com/photos/karviainen/152502385/
     - Licencia: CC BY 2.0
 
 • Arándanos
     - Archivo: blueberries.jpg
     - Autor: Benjamin White
+    - Enlace: https://www.flickr.com/photos/bjwhite66212/50405763906/
     - Licencia: CC BY-SA 2.0
 
 • Frambuesas
     - Archivo: raspberries.jpg
     - Autor: oatsy40
+    - Enlace: https://www.flickr.com/photos/oatsy40/14411767730/
     - Licencia: CC BY 2.0
 
 • Naranjas
     - Archivo: oranges.jpg
     - Autor: Bob Duran
+    - Enlace: https://www.flickr.com/photos/bob5d/6235792240/
     - Licencia: CC BY 2.0
 
 • Sandías
     - Archivo: watermelons.jpg
     - Autor: Harsha K R
+    - Enlace: https://www.flickr.com/photos/mynameisharsha/5427691534/
     - Licencia: CC BY-SA 2.0
 
 • Pitahayas
     - Archivo: dragonfruits.jpg
     - Autor: Paul Sableman
+    - Enlace: https://www.flickr.com/photos/pasa/14637347285/
     - Licencia: CC BY 2.0
 
 • Aguacates
     - Archivo: avocados.jpg
     - Autor: olle svensson
+    - Enlace: https://www.flickr.com/photos/ollesvensson/3114503026/
     - Licencia: CC BY 2.0
 
 • Mangos
     - Archivo: mangos.jpg
     - Autor: Miwok
+    - Enlace: https://www.flickr.com/photos/miwok/11051115555
     - Licencia: CC0 1.0 - Dominio público
 
 • Cerezas
     - Archivo: cherries.jpg
     - Autor: Niklas Bildhauer
+    - Enlace: https://www.flickr.com/photos/smutjespickles/2434419860
     - Licencia: CC BY-SA 2.0
 
 • Melocotones
     - Archivo: peaches.jpg
     - Autor: Forest Starr and Kim Starr
+    - Enlace: https://www.flickr.com/photos/forest-and-kim/13940952812/
     - Licencia: CC BY 2.0
 
 • Piñas
     - Archivo: pineapples.jpg
     - Autor: Janine
+    - Enlace: https://www.flickr.com/photos/geishabot/2213428099/
     - Licencia: CC BY 2.0
 
 • Higos
     - Archivo: figs.jpg
     - Autor: Bill Benzon
+    - Enlace: https://www.flickr.com/photos/stc4blues/7868342712/
     - Licencia: CC BY-SA 2.0
 
 • Cocos
     - Archivo: coconuts.jpg
     - Autor: Theo Crazzolara
+    - Enlace: https://www.flickr.com/photos/theocrazzolara/35591240724/
     - Licencia: CC BY 2.0
 
 • Granadas
     - Archivo: pomegranates.jpg
     - Autor: Jeremy Keith
+    - Enlace: https://www.flickr.com/photos/adactio/12149176185/
     - Licencia: CC BY 2.0
 
 • Papayas
     - Archivo: papayas.jpg
     - Autor: Luis Tamayo
+    - Enlace: https://www.flickr.com/photos/chasqui/4229124857/
     - Licencia: CC BY-SA 2.0
 
 • Carambolas
     - Archivo: carambolas.jpg
     - Autor: Forest and Kim Starr
+    - Enlace: https://www.flickr.com/photos/starr-environmental/24356359703/
     - Licencia: CC BY 2.0
 
 • Lichis
     - Archivo: lychees.jpg
     - Autor: rjp
+    - Enlace: https://www.flickr.com/photos/zimpenfish/413048081/
     - Licencia: CC BY 2.0
 
 • Plátanos
     - Archivo: bananas.jpg
     - Autor: Branko Collin
+    - Enlace: https://www.flickr.com/photos/24oranges/6612823785/
     - Licencia: CC BY-SA 2.0
 
 • Manzanas
     - Archivo: apples.jpg
     - Autor: Michele Dorsey Walfred
+    - Enlace: https://www.flickr.com/photos/dorseymw/29134523604/
     - Licencia: CC BY 2.0
 
 • Peras
     - Archivo: pears.jpg
     - Autor: jonathanhorsley
+    - Enlace: https://www.flickr.com/photos/11148324@N06/1050653543/
     - Licencia: CC BY 2.0
 
 • Limones
     - Archivo: lemons.jpg
     - Autor: Mike Mozart
+    - Enlace: https://www.flickr.com/photos/jeepersmedia/15134372182/
     - Licencia: CC BY 2.0
 
 • Ciruelas
     - Archivo: plums.jpg
     - Autor: grassrootsgroundswell
+    - Enlace: https://www.flickr.com/photos/grassrootsgroundswell/36325769486/
     - Licencia: CC BY 2.0
 
 • Mandarinas
     - Archivo: tangerines.jpg
     - Autor: Neil Conway
+    - Enlace: https://www.flickr.com/photos/neilconway/6545431997/
     - Licencia: CC BY 2.0
 
 • Moras
     - Archivo: blackberries.jpg
     - Autor: vanessa lollipop
+    - Enlace: https://www.flickr.com/photos/vanessapoppe/8560991825/
     - Licencia: CC BY-SA 2.0
 
 • Kiwis
     - Archivo: kiwis.jpg
     - Autor: Kyle McDonald
+    - Enlace: https://www.flickr.com/photos/kylemcdonald/3442286811/
     - Licencia: CC BY 2.0
 
 ** Ilustraciones **
@@ -151,16 +175,19 @@ Todas las imágenes de las frutas provienen de Flickr (https://www.flickr.com/).
 • Mandarinas
     - Archivo: tangerines_cr.jpg
     - Autor: Ivan Radic
+    - Enlace: https://www.flickr.com/photos/26344495@N05/50743652271/
     - Licencia: CC BY 2.0
 
 • Manzanas
     - Archivo: apples_cr.jpg
     - Autor: Ivan Radic
+    - Enlace: https://www.flickr.com/photos/26344495@N05/49132689027/
     - Licencia: CC BY 2.0
 
 • Ciruelas
     - Archivo: plums_cr.jpg
     - Autor: とりどり
+    - Enlace: https://www.flickr.com/photos/183837926@N03/48724809461/ 
     - Licencia: CC BY-SA 2.0
 
 ## Otros ##
@@ -190,9 +217,11 @@ Todas las imágenes de las frutas provienen de Flickr (https://www.flickr.com/).
 • Bree Serif
     - Origen: Google Fonts
     - Autor: TypeTogether
+    - Enlace: https://fonts.google.com/specimen/Bree+Serif
     - Licencia: Open Font License
 
 • Noto Sans
     - Origen: Google Fonts
     - Autor: Google
+    - Enlace: https://fonts.google.com/noto/specimen/Noto+Sans
     - Licencia: Open Font License
