@@ -64,6 +64,7 @@ if (navigator.userAgent.includes("Chrome")) {     // No funciona en Firefox, por
         micBtn.innerHTML = `<div class="spinner-grow spinner-grow-sm text-secondary" role="status">
         <span class="visually-hidden">Escuchando...</span>
       </div>`;
+        new Audio('/app/assets/audio/mic.wav').play();
         recognition.start();
     });
 
