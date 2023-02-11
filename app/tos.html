@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zhenghang Cai">
+    <title>Términos | Melonseed</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/cookie.js" defer></script>
+    <script src="scripts/auth.js" defer></script>
+</head>
+
+<body>
+    <!--Barra de navegación-->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/app/assets/images/logo/melon.svg" alt="Logo" width="48" class="mb-3">
+                <span class="fs-1 text-light">Melonseed</span>
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                        <a class="link nav-link text-light" href="catalog.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <div class="dropdown">
+                            <a class="link nav-link text-light session" data-bs-toggle="modal" aria-expanded="false"
+                                data-bs-target="#loginModal">Iniciar
+                                sesión</a>
+                            <ul class="dropdown-menu mb-2">
+                                <li><span class="dropdown-header"><i class="bi bi-person-circle"> </i><span
+                                            class="username"></span></span></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item logout" href="#"><i class="bi bi-box-arrow-right"></i>
+                                        Cerrar
+                                        sesión</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="cart.html" class="nav-link text-light rounded-pill green-btn text-center px-4"
+                            id="cart-btn">Carrito</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <div class="input-group my-md-2 my-1">
+                        <button class="green-btn text-light rounded-start-pill p-3 d-flex align-items-center search-btn"
+                            type="submit"><i class="bi bi-search"></i></button>
+                        <input class="form-control search-text shadow-none border border-end-0" type="search"
+                            placeholder="Escribe algo..." aria-label="Search">
+                        <button class="bg-white text-black rounded-end-pill p-3 d-flex align-items-center mic-btn"
+                            type="button"><i class="bi bi-mic-fill"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Aviso legal-->
+    <section class="container-fluid content p-lg-5" id="legal">
+        <h1 class="important-section">Aviso legal<span class="fs-4 match-string"></span></h1>
+        <div class="row">
+            <div class="col-12">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque interdum, tempor nisi ut,
+                    posuere mi. Suspendisse mollis molestie placerat. Vivamus consectetur interdum consequat. Vivamus
+                    vehicula magna ut augue blandit, ac cursus nunc luctus. In lorem tellus, tristique et elit nec,
+                    euismod sodales lacus. Curabitur a leo id orci tristique tincidunt. Aliquam id scelerisque lectus.
+                    Sed molestie diam sit amet consequat imperdiet. In egestas eros quis turpis viverra condimentum.
+                    Pellentesque at ultricies orci. Donec sed diam vel libero placerat ultrices vitae interdum est.
+                    Phasellus facilisis luctus sem, non hendrerit sem vestibulum id. Aliquam nec tortor sed odio
+                    facilisis condimentum. Ut rutrum id urna vel blandit. Vivamus dapibus nec magna vel bibendum.
+                    Suspendisse vitae eleifend leo, in maximus felis.</p>
+                <p> Ut vel velit non risus imperdiet tincidunt eget vel massa. Sed quis nibh vel magna accumsan posuere
+                    eu fermentum dolor. Praesent laoreet mauris nisi, sit amet tincidunt metus semper ut. Pellentesque
+                    ultrices et risus eget ultrices. Nam eu pharetra lacus. In nec suscipit purus. Praesent facilisis
+                    urna non nisi sodales, a auctor lorem blandit. Suspendisse vitae velit fringilla, ultricies elit
+                    sed, posuere risus. Donec congue at ligula vel dictum.</p>
+                <p> Donec pharetra id turpis sed mollis. Nunc cursus turpis eget nibh consectetur vestibulum. Ut eget
+                    semper magna. Mauris placerat auctor ullamcorper. Sed a sagittis dui. Sed vitae imperdiet augue.
+                    Duis vestibulum vestibulum ante, in ullamcorper metus aliquet nec.</p>
+                <p>
+                    Vestibulum gravida a velit sed sagittis. Integer mattis quis metus semper interdum. Maecenas
+                    interdum, nisi in finibus auctor, augue nulla fringilla justo, et maximus purus eros in est.
+                    Pellentesque condimentum pulvinar gravida. Aenean vulputate tristique metus, ac sollicitudin elit
+                    efficitur ac. Morbi sit amet justo vel est porttitor venenatis. Vivamus suscipit sed nibh eu
+                    porttitor. Aenean in dolor nec quam iaculis viverra id et dolor. Fusce viverra pellentesque nisi, at
+                    ultricies erat laoreet a. Fusce egestas metus vitae ex vehicula, a congue ante vulputate. Proin
+                    aliquam orci urna, vel vehicula dolor vulputate vel. Duis ut elementum neque. Vestibulum rhoncus
+                    ultrices erat non feugiat. Donec nisi eros, porta eu blandit eget, iaculis id felis. In eu turpis ac
+                    eros sollicitudin luctus. Sed cursus lacus nulla, quis facilisis nulla rutrum id.
+                </p>
+                <p>
+                    Proin sed fringilla nisl. Vivamus ac nibh tellus. Etiam vehicula eget nisl quis auctor. Nulla
+                    facilisi. Vestibulum tristique ipsum vel ipsum vulputate, malesuada cursus ante elementum. Fusce
+                    egestas est sit amet malesuada elementum. Integer eget tellus id sapien venenatis efficitur.
+                    Maecenas massa sapien, placerat quis cursus et, lacinia et velit. Nulla leo lectus, posuere eu felis
+                    vel, suscipit placerat enim. Mauris eleifend luctus enim, eget pharetra nisi posuere sed. Curabitur
+                    iaculis nisi mauris, facilisis interdum erat hendrerit ut.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--Política de privacidad-->
+    <section class="container-fluid content p-lg-5" id="privacy">
+        <h1 class="important-section">Política de privacidad<span class="fs-4 match-string"></span></h1>
+        <div class="row">
+            <div class="col-12">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque interdum, tempor nisi ut,
+                    posuere mi. Suspendisse mollis molestie placerat. Vivamus consectetur interdum consequat. Vivamus
+                    vehicula magna ut augue blandit, ac cursus nunc luctus. In lorem tellus, tristique et elit nec,
+                    euismod sodales lacus. Curabitur a leo id orci tristique tincidunt. Aliquam id scelerisque lectus.
+                    Sed molestie diam sit amet consequat imperdiet. In egestas eros quis turpis viverra condimentum.
+                    Pellentesque at ultricies orci. Donec sed diam vel libero placerat ultrices vitae interdum est.
+                    Phasellus facilisis luctus sem, non hendrerit sem vestibulum id. Aliquam nec tortor sed odio
+                    facilisis condimentum. Ut rutrum id urna vel blandit. Vivamus dapibus nec magna vel bibendum.
+                    Suspendisse vitae eleifend leo, in maximus felis.</p>
+                <p> Ut vel velit non risus imperdiet tincidunt eget vel massa. Sed quis nibh vel magna accumsan posuere
+                    eu fermentum dolor. Praesent laoreet mauris nisi, sit amet tincidunt metus semper ut. Pellentesque
+                    ultrices et risus eget ultrices. Nam eu pharetra lacus. In nec suscipit purus. Praesent facilisis
+                    urna non nisi sodales, a auctor lorem blandit. Suspendisse vitae velit fringilla, ultricies elit
+                    sed, posuere risus. Donec congue at ligula vel dictum.</p>
+                <p> Donec pharetra id turpis sed mollis. Nunc cursus turpis eget nibh consectetur vestibulum. Ut eget
+                    semper magna. Mauris placerat auctor ullamcorper. Sed a sagittis dui. Sed vitae imperdiet augue.
+                    Duis vestibulum vestibulum ante, in ullamcorper metus aliquet nec.</p>
+                <p>
+                    Vestibulum gravida a velit sed sagittis. Integer mattis quis metus semper interdum. Maecenas
+                    interdum, nisi in finibus auctor, augue nulla fringilla justo, et maximus purus eros in est.
+                    Pellentesque condimentum pulvinar gravida. Aenean vulputate tristique metus, ac sollicitudin elit
+                    efficitur ac. Morbi sit amet justo vel est porttitor venenatis. Vivamus suscipit sed nibh eu
+                    porttitor. Aenean in dolor nec quam iaculis viverra id et dolor. Fusce viverra pellentesque nisi, at
+                    ultricies erat laoreet a. Fusce egestas metus vitae ex vehicula, a congue ante vulputate. Proin
+                    aliquam orci urna, vel vehicula dolor vulputate vel. Duis ut elementum neque. Vestibulum rhoncus
+                    ultrices erat non feugiat. Donec nisi eros, porta eu blandit eget, iaculis id felis. In eu turpis ac
+                    eros sollicitudin luctus. Sed cursus lacus nulla, quis facilisis nulla rutrum id.
+                </p>
+                <p>
+                    Proin sed fringilla nisl. Vivamus ac nibh tellus. Etiam vehicula eget nisl quis auctor. Nulla
+                    facilisi. Vestibulum tristique ipsum vel ipsum vulputate, malesuada cursus ante elementum. Fusce
+                    egestas est sit amet malesuada elementum. Integer eget tellus id sapien venenatis efficitur.
+                    Maecenas massa sapien, placerat quis cursus et, lacinia et velit. Nulla leo lectus, posuere eu felis
+                    vel, suscipit placerat enim. Mauris eleifend luctus enim, eget pharetra nisi posuere sed. Curabitur
+                    iaculis nisi mauris, facilisis interdum erat hendrerit ut.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--Términos de uso-->
+    <section class="container-fluid content p-lg-5" id="terms">
+        <h1 class="important-section">Términos de uso<span class="fs-4 match-string"></span></h1>
+        <div class="row">
+            <div class="col-12">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque interdum, tempor nisi ut,
+                    posuere mi. Suspendisse mollis molestie placerat. Vivamus consectetur interdum consequat. Vivamus
+                    vehicula magna ut augue blandit, ac cursus nunc luctus. In lorem tellus, tristique et elit nec,
+                    euismod sodales lacus. Curabitur a leo id orci tristique tincidunt. Aliquam id scelerisque lectus.
+                    Sed molestie diam sit amet consequat imperdiet. In egestas eros quis turpis viverra condimentum.
+                    Pellentesque at ultricies orci. Donec sed diam vel libero placerat ultrices vitae interdum est.
+                    Phasellus facilisis luctus sem, non hendrerit sem vestibulum id. Aliquam nec tortor sed odio
+                    facilisis condimentum. Ut rutrum id urna vel blandit. Vivamus dapibus nec magna vel bibendum.
+                    Suspendisse vitae eleifend leo, in maximus felis.</p>
+                <p> Ut vel velit non risus imperdiet tincidunt eget vel massa. Sed quis nibh vel magna accumsan posuere
+                    eu fermentum dolor. Praesent laoreet mauris nisi, sit amet tincidunt metus semper ut. Pellentesque
+                    ultrices et risus eget ultrices. Nam eu pharetra lacus. In nec suscipit purus. Praesent facilisis
+                    urna non nisi sodales, a auctor lorem blandit. Suspendisse vitae velit fringilla, ultricies elit
+                    sed, posuere risus. Donec congue at ligula vel dictum.</p>
+                <p> Donec pharetra id turpis sed mollis. Nunc cursus turpis eget nibh consectetur vestibulum. Ut eget
+                    semper magna. Mauris placerat auctor ullamcorper. Sed a sagittis dui. Sed vitae imperdiet augue.
+                    Duis vestibulum vestibulum ante, in ullamcorper metus aliquet nec.</p>
+                <p>
+                    Vestibulum gravida a velit sed sagittis. Integer mattis quis metus semper interdum. Maecenas
+                    interdum, nisi in finibus auctor, augue nulla fringilla justo, et maximus purus eros in est.
+                    Pellentesque condimentum pulvinar gravida. Aenean vulputate tristique metus, ac sollicitudin elit
+                    efficitur ac. Morbi sit amet justo vel est porttitor venenatis. Vivamus suscipit sed nibh eu
+                    porttitor. Aenean in dolor nec quam iaculis viverra id et dolor. Fusce viverra pellentesque nisi, at
+                    ultricies erat laoreet a. Fusce egestas metus vitae ex vehicula, a congue ante vulputate. Proin
+                    aliquam orci urna, vel vehicula dolor vulputate vel. Duis ut elementum neque. Vestibulum rhoncus
+                    ultrices erat non feugiat. Donec nisi eros, porta eu blandit eget, iaculis id felis. In eu turpis ac
+                    eros sollicitudin luctus. Sed cursus lacus nulla, quis facilisis nulla rutrum id.
+                </p>
+                <p>
+                    Proin sed fringilla nisl. Vivamus ac nibh tellus. Etiam vehicula eget nisl quis auctor. Nulla
+                    facilisi. Vestibulum tristique ipsum vel ipsum vulputate, malesuada cursus ante elementum. Fusce
+                    egestas est sit amet malesuada elementum. Integer eget tellus id sapien venenatis efficitur.
+                    Maecenas massa sapien, placerat quis cursus et, lacinia et velit. Nulla leo lectus, posuere eu felis
+                    vel, suscipit placerat enim. Mauris eleifend luctus enim, eget pharetra nisi posuere sed. Curabitur
+                    iaculis nisi mauris, facilisis interdum erat hendrerit ut.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--Condiciones de venta-->
+    <section class="container-fluid content p-lg-5" id="conditions">
+        <h1 class="important-section">Condiciones de venta<span class="fs-4 match-string"></span></h1>
+        <div class="row">
+            <div class="col-12">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque interdum, tempor nisi ut,
+                    posuere mi. Suspendisse mollis molestie placerat. Vivamus consectetur interdum consequat. Vivamus
+                    vehicula magna ut augue blandit, ac cursus nunc luctus. In lorem tellus, tristique et elit nec,
+                    euismod sodales lacus. Curabitur a leo id orci tristique tincidunt. Aliquam id scelerisque lectus.
+                    Sed molestie diam sit amet consequat imperdiet. In egestas eros quis turpis viverra condimentum.
+                    Pellentesque at ultricies orci. Donec sed diam vel libero placerat ultrices vitae interdum est.
+                    Phasellus facilisis luctus sem, non hendrerit sem vestibulum id. Aliquam nec tortor sed odio
+                    facilisis condimentum. Ut rutrum id urna vel blandit. Vivamus dapibus nec magna vel bibendum.
+                    Suspendisse vitae eleifend leo, in maximus felis.</p>
+                <p> Ut vel velit non risus imperdiet tincidunt eget vel massa. Sed quis nibh vel magna accumsan posuere
+                    eu fermentum dolor. Praesent laoreet mauris nisi, sit amet tincidunt metus semper ut. Pellentesque
+                    ultrices et risus eget ultrices. Nam eu pharetra lacus. In nec suscipit purus. Praesent facilisis
+                    urna non nisi sodales, a auctor lorem blandit. Suspendisse vitae velit fringilla, ultricies elit
+                    sed, posuere risus. Donec congue at ligula vel dictum.</p>
+                <p> Donec pharetra id turpis sed mollis. Nunc cursus turpis eget nibh consectetur vestibulum. Ut eget
+                    semper magna. Mauris placerat auctor ullamcorper. Sed a sagittis dui. Sed vitae imperdiet augue.
+                    Duis vestibulum vestibulum ante, in ullamcorper metus aliquet nec.</p>
+                <p>
+                    Vestibulum gravida a velit sed sagittis. Integer mattis quis metus semper interdum. Maecenas
+                    interdum, nisi in finibus auctor, augue nulla fringilla justo, et maximus purus eros in est.
+                    Pellentesque condimentum pulvinar gravida. Aenean vulputate tristique metus, ac sollicitudin elit
+                    efficitur ac. Morbi sit amet justo vel est porttitor venenatis. Vivamus suscipit sed nibh eu
+                    porttitor. Aenean in dolor nec quam iaculis viverra id et dolor. Fusce viverra pellentesque nisi, at
+                    ultricies erat laoreet a. Fusce egestas metus vitae ex vehicula, a congue ante vulputate. Proin
+                    aliquam orci urna, vel vehicula dolor vulputate vel. Duis ut elementum neque. Vestibulum rhoncus
+                    ultrices erat non feugiat. Donec nisi eros, porta eu blandit eget, iaculis id felis. In eu turpis ac
+                    eros sollicitudin luctus. Sed cursus lacus nulla, quis facilisis nulla rutrum id.
+                </p>
+                <p>
+                    Proin sed fringilla nisl. Vivamus ac nibh tellus. Etiam vehicula eget nisl quis auctor. Nulla
+                    facilisi. Vestibulum tristique ipsum vel ipsum vulputate, malesuada cursus ante elementum. Fusce
+                    egestas est sit amet malesuada elementum. Integer eget tellus id sapien venenatis efficitur.
+                    Maecenas massa sapien, placerat quis cursus et, lacinia et velit. Nulla leo lectus, posuere eu felis
+                    vel, suscipit placerat enim. Mauris eleifend luctus enim, eget pharetra nisi posuere sed. Curabitur
+                    iaculis nisi mauris, facilisis interdum erat hendrerit ut.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--Pie de página-->
+    <footer class="text-center text-lg-start text-light">
+        <div class="row mt-0 p-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h5 class="text-uppercase fw-bold mb-4">
+                    Acerca de
+                </h5>
+                <p>
+                    Melonseed es una tienda dedicada a la venta de una gran variedad de frutas.
+                </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h5 class="text-uppercase fw-bold mb-4">
+                    Enlaces de interés
+                </h5>
+                <p>
+                    <i class="bi bi-flag-fill"> </i><a href="#legal" class="text-reset">Aviso legal</a>
+                </p>
+                <p>
+                    <i class="bi bi-shield-lock-fill"> </i><a href="#privacy" class="text-reset">Política de privacidad</a>
+                </p>
+                <p>
+                    <i class="bi bi-file-text-fill"> </i><a href="#terms" class="text-reset">Términos de uso</a>
+                </p>
+                <p>
+                    <i class="bi bi-bag-fill"></i> <a href="#conditions" class="text-reset">Condiciones de venta</a>
+                </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h5 class="text-uppercase fw-bold mb-4">Contacto</h5>
+                <p><i class="bi bi-geo-alt-fill"></i> 44°14'39.0"N 7°46'10.0"E</p>
+                <p>
+                    <i class="bi bi-envelope-at-fill"></i>
+                    <a class="text-light text-decoration-none" href="mailto:ayuda@melon.seed">ayuda@melon.seed</a>
+                </p>
+                <p>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a class="text-light text-decoration-none" href="tel:+34778537972">778 537 972</a>
+                </p>
+            </div>
+        </div>
+        <div class="text-center p-4 footer-bottom">
+            <span class="copyleft">©</span> 2023 Copyleft:
+            <a class="text-reset fw-bold" href="#">Melonseed</a> |
+            <a class="text-reset fw-bold" href="../attributions.txt" target="_blank">Atribuciones</a>
+        </div>
+    </footer>
+    <!-- Modal de login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Iniciar sesión</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="user-label"><i class="bi bi-person-fill"></i></span>
+                            <input type="text" id="loginuser" class="form-control" placeholder="Nombre de usuario"
+                                aria-label="Username" aria-describedby="basic-addon">
+                            <div class="invalid-feedback">
+                                Las credenciales introducidas son inválidas.
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="password-label"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" id="loginpassword" class="form-control" placeholder="Contraseña"
+                                aria-label="Password" aria-describedby="basic-addon">
+                            <div class="invalid-feedback">
+
+                            </div>
+                        </div>
+                        <button type="submit" class="text-light rounded-pill green-btn px-4"><i
+                                class="bi bi-box-arrow-in-right"> </i>Entrar</button>
+                        <div class="submit-result"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="link-success" data-bs-toggle="modal" data-bs-target="#signupModal">¿No estás
+                        registrado? ¡Date de alta!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de registro-->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signupModalLabel">Crear usuario</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" autocomplete="off">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="s-user-label"><i class="bi bi-person-fill"></i></span>
+                            <input type="text" id="signupuser" class="form-control rounded-end"
+                                placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon">
+                            <div class="invalid-feedback">
+                                El nombre de usuario debe tener entre 4 y 12 carácteres alfanuméricos.
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="s-password-label"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" id="signuppassword" class="form-control rounded-end"
+                                placeholder="Contraseña" aria-label="Password" aria-describedby="basic-addon">
+                            <div class="invalid-feedback">
+                                La contraseña debe tener al menos 8 carácteres; 1 mayúscula, 1 minúscula y 1 número como
+                                mínimo.
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="s-rpassword-label"><i class="bi bi-key-fill"></i></span>
+                            <input type="password" id="signuprpassword" class="form-control rounded-end"
+                                placeholder="Confirmar contraseña" aria-label="Password" aria-describedby="basic-addon">
+                            <div class="invalid-feedback">
+                                Introduce nuevamente la contraseña.
+                            </div>
+                        </div>
+                        <button type="submit" class="text-light rounded-pill green-btn px-4"><i
+                                class="bi bi-person-fill-add"> </i>Enviar</button>
+                        <div class="submit-result"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="link-success" data-bs-toggle="modal" data-bs-target="#loginModal">¿Ya te has
+                        registrado? ¡Inicia sesión!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Toast de consentimiento de cookies-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast cookie" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">🍪 Consentimiento de cookies</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <p>¿Aceptas crear y guardar una cookie en tu navegador?</p>
+                <small>Se guardará un UUID aleatorio que expirará en 7 días.</small>
+                <div class="mt-2 pt-2 border-top d-flex justify-content-center">
+                    <button type="button" class="text-light rounded-pill green-btn px-4" id="accept-cookie"><i
+                            class="bi bi-check-circle-fill"> </i>Acepto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
