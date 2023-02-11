@@ -1,0 +1,198 @@
+Este prototipo está bajo la licencia GNU General Public License v3.0 cuya equivalencia en Creative Commons es BY-SA 4.0.
+
+Este proyecto ha sido posible gracias a los trabajos de las siguientes personas y organizaciones:
+
+## Imágenes ##
+Todas las imágenes de las frutas provienen de Flickr (https://www.flickr.com/).
+
+** Catálogo **
+• Fresas
+    - Archivo: strawberries.jpg
+    - Autor: kahvikisu
+    - Licencia: CC BY 2.0
+
+• Arándanos
+    - Archivo: blueberries.jpg
+    - Autor: Benjamin White
+    - Licencia: CC BY-SA 2.0
+
+• Frambuesas
+    - Archivo: raspberries.jpg
+    - Autor: oatsy40
+    - Licencia: CC BY 2.0
+
+• Naranjas
+    - Archivo: oranges.jpg
+    - Autor: Bob Duran
+    - Licencia: CC BY 2.0
+
+• Sandías
+    - Archivo: watermelons.jpg
+    - Autor: Harsha K R
+    - Licencia: CC BY-SA 2.0
+
+• Pitahayas
+    - Archivo: dragonfruits.jpg
+    - Autor: Paul Sableman
+    - Licencia: CC BY 2.0
+
+• Aguacates
+    - Archivo: avocados.jpg
+    - Autor: olle svensson
+    - Licencia: CC BY 2.0
+
+• Mangos
+    - Archivo: mangos.jpg
+    - Autor: Miwok
+    - Licencia: CC0 1.0 - Dominio público
+
+• Cerezas
+    - Archivo: cherries.jpg
+    - Autor: Niklas Bildhauer
+    - Licencia: CC BY-SA 2.0
+
+• Melocotones
+    - Archivo: peaches.jpg
+    - Autor: Forest Starr and Kim Starr
+    - Licencia: CC BY 2.0
+
+• Piñas
+    - Archivo: pineapples.jpg
+    - Autor: Janine
+    - Licencia: CC BY 2.0
+
+• Higos
+    - Archivo: figs.jpg
+    - Autor: Bill Benzon
+    - Licencia: CC BY-SA 2.0
+
+• Cocos
+    - Archivo: coconuts.jpg
+    - Autor: Theo Crazzolara
+    - Licencia: CC BY 2.0
+
+• Granadas
+    - Archivo: pomegranates.jpg
+    - Autor: Jeremy Keith
+    - Licencia: CC BY 2.0
+
+• Papayas
+    - Archivo: papayas.jpg
+    - Autor: Luis Tamayo
+    - Licencia: CC BY-SA 2.0
+
+• Carambolas
+    - Archivo: carambolas.jpg
+    - Autor: Forest and Kim Starr
+    - Licencia: CC BY 2.0
+
+• Lichis
+    - Archivo: lychees.jpg
+    - Autor: rjp
+    - Licencia: CC BY 2.0
+
+• Plátanos
+    - Archivo: bananas.jpg
+    - Autor: Branko Collin
+    - Licencia: CC BY-SA 2.0
+
+• Manzanas
+    - Archivo: apples.jpg
+    - Autor: Michele Dorsey Walfred
+    - Licencia: CC BY 2.0
+
+• Peras
+    - Archivo: pears.jpg
+    - Autor: jonathanhorsley
+    - Licencia: CC BY 2.0
+
+• Limones
+    - Archivo: lemons.jpg
+    - Autor: Mike Mozart
+    - Licencia: CC BY 2.0
+
+• Ciruelas
+    - Archivo: plums.jpg
+    - Autor: grassrootsgroundswell
+    - Licencia: CC BY 2.0
+
+• Mandarinas
+    - Archivo: tangerines.jpg
+    - Autor: Neil Conway
+    - Licencia: CC BY 2.0
+
+• Moras
+    - Archivo: blackberries.jpg
+    - Autor: vanessa lollipop
+    - Licencia: CC BY-SA 2.0
+
+• Kiwis
+    - Archivo: kiwis.jpg
+    - Autor: Kyle McDonald
+    - Licencia: CC BY 2.0
+
+** Ilustraciones **
+• Carrito vacío
+    - Archivo: empty-cart.svg
+    - Autor: unDraw (https://undraw.co/illustrations)
+    - Licencia: https://undraw.co/license (Libre)
+
+** Iconos **
+• Logo del sitio: Sandía
+    - Archivos: melon.svg, favicon.ico
+    - Autor: Noto Emoji Project (https://github.com/googlefonts/noto-emoji)
+    - Licencia: Apache License 2.0
+
+• Iconos de la interfaz (Bootstrap Icons)
+    - Autor: Bootstrap (https://icons.getbootstrap.com/)
+    - Licencia: The MIT License
+
+** Destacados del carrusel **
+• Mandarinas
+    - Archivo: tangerines_cr.jpg
+    - Autor: Ivan Radic
+    - Licencia: CC BY 2.0
+
+• Manzanas
+    - Archivo: apples_cr.jpg
+    - Autor: Ivan Radic
+    - Licencia: CC BY 2.0
+
+• Ciruelas
+    - Archivo: plums_cr.jpg
+    - Autor: とりどり
+    - Licencia: CC BY-SA 2.0
+
+## Otros ##
+
+• Descripciones de las frutas
+    - Origen: API de Wikipedia (https://www.mediawiki.org/wiki/API:Main_page)
+    - Autor: Wikimedia Foundation y sus editores
+    - Licencia: CC BY-SA 3.0 y GNU Free Documentation License
+
+• Banderas
+    - Origen: CDN Flagpedia.net
+    - Autor: Flagpedia.net (https://flagpedia.net)
+    - Licencia: Dominio público (https://flagpedia.net/about)
+
+• Mapa y localización
+    - Origen: OpenStreetMap. Para la localización se usa la API de esta, Nominatim (https://nominatim.org/)
+    - Autor: OpenStreetMap (https://www.openstreetmap.org/) y sus contribuidores
+    - Licencia: Open Data Commons Open Database License
+
+• Representación del mapa
+    - Librería: Leaflet (https://leafletjs.com/)
+    - Autor: Volodymyr Agafonkin
+    - Licencia: BSD 2-Clause "Simplified" License
+
+** Fuentes **
+
+• Bree Serif
+    - Origen: Google Fonts
+    - Autor: TypeTogether
+    - Licencia: Open Font License
+
+• Noto Sans
+    - Origen: Google Fonts
+    - Autor: Google
+    - Licencia: Open Font License
