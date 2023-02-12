@@ -195,6 +195,13 @@ Este proyecto ha sido posible gracias a los trabajos de las siguientes personas 
     - Enlace: https://www.flickr.com/photos/183837926@N03/48724809461/ 
     - Licencia: CC BY-SA 2.0
 
+## Audios ##
+
+• Sonido de micrófono
+    - Archivo: mic.wav
+    - Autor: Zhenghang Cai (grabado por mi)
+    - Licencia: Lo libero al dominio público
+
 ## Otros ##
 
 • Descripciones de las frutas

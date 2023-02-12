@@ -39,6 +39,8 @@ function showCatalog(isFeatured) {
         if (matchedFruits.length > 0) {
             matchString.textContent = ` / Coincidencias para "${getSearchString()}"`
             fruitsToShow = matchedFruits;
+        } else {
+            matchString.textContent = ` / Sin coincidencias para "${getSearchString()}"`
         }
     }
     fruitsToShow.forEach(availableFruits => {
