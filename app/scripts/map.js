@@ -22,7 +22,7 @@ function showMap(latitude = 40.416729, longitude = -3.703339) {
   });
 
   const map = new L.map("map", mapOptions);
-  const layer = new L.TileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png');
+  const layer = new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png');
   map.addLayer(layer);
 
   const origin = [latitude, longitude];

@@ -24,7 +24,6 @@ if (localStorage.getItem("users") === null) {
 
 // Registro
 const signUpForm = document.querySelector(".needs-validation");
-
 const usernameRegex = new RegExp(/^\w{4,12}$/); // 4 a 12 carácteres alfanúmericos.
 const passwordRegex = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/); // Al menos 8 carácteres. Mínimo 1 mayúscula, 1 minúscula y 1 número. Puede contener símbolos.
 
@@ -32,11 +31,13 @@ signUpForm.addEventListener("submit", validateSignUp)
 
 function validateSignUp(e) {
     e.preventDefault();
+    const currentUsers = JSON.parse(localStorage.getItem("users"));
     const form = e.target;
     const user = form.signupuser;
     const password = form.signuppassword;
     const repeatPassword = form.signuprpassword;
     let isEverythingCorrect = true;
+    let userExists = false;
 
     if (!usernameRegex.test(user.value)) {
         isEverythingCorrect = false;
@@ -59,9 +60,17 @@ function validateSignUp(e) {
         provideFeedback(repeatPassword, false)
     }
 
-    if (isEverythingCorrect) {
-        showSubmitResult(false, form, user.value)
+    if (currentUsers.some(cu => cu.user === user.value.toLowerCase())) {
+        userExists = true;
+    }
+
+    if (isEverythingCorrect && !userExists) {
+        showSubmitResult(false, false, form, user.value)
         createUser(user.value, password.value);
+    }
+
+    if (userExists) {
+        showSubmitResult(false, true, form, user.value);
     }
 
 }
@@ -76,7 +85,7 @@ function provideFeedback(field, isError) {
     }
 }
 
-function showSubmitResult(isLogin, form, username) {
+function showSubmitResult(isLogin, userExists, form, username) {
     if (!isLogin) {
         form.lastElementChild.innerHTML = `<div class="mt-2 alert alert-success alert-dismissible fade show" role="success">
         <i class="bi bi-check-circle-fill"> </i>Se ha creado el usuario <b>${username}</b> exitosamente.
@@ -85,6 +94,12 @@ function showSubmitResult(isLogin, form, username) {
     } else {
         form.lastElementChild.innerHTML = `<div class="mt-2 alert alert-success alert-dismissible fade show" role="success">
         <i class="bi bi-check-circle-fill"> </i>Has iniciado sesión como <b>${username}</b> exitosamente.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>`
+    }
+    if (userExists) {
+        form.lastElementChild.innerHTML = `<div class="mt-2 alert alert-danger alert-dismissible fade show" role="error">
+        <i class="bi bi-x-circle-fill"> </i>Ya existe el usuario <b>${username}</b>.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>`
     }
@@ -123,7 +138,7 @@ function validateLogin(e) {
     } else {
         provideFeedback(userName, false);
         provideFeedback(userPassword, false);
-        showSubmitResult(true, form, userName.value.toLowerCase());
+        showSubmitResult(true, false, form, userName.value.toLowerCase());
         createSession(userName.value.toLowerCase());
     }
 
