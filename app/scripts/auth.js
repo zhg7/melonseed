@@ -13,7 +13,8 @@ const DEFAULT_USERS = [
                 "item": "Fresas",
                 "quantity": 4
             }
-        ]
+        ],
+        "orders": 0
     }
 ]
 
@@ -110,7 +111,8 @@ function createUser(user, password) {
     const newUser = {
         "user": user.toLowerCase(),
         "password": password,
-        "cart": []
+        "cart": [],
+        "orders": 0
     }
 
     const users = JSON.parse(localStorage.getItem("users"));

@@ -197,7 +197,10 @@ function placeOrder() {
     const orderDateField = document.getElementById("order-date");
     orderIdField.textContent = crypto.getRandomValues(new Uint32Array(1));
     orderTotalField.textContent = document.getElementById("total").firstElementChild.textContent;
-    orderDateField.textContent = new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'short' }).format(Date.now())
+    orderDateField.textContent = new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'short' }).format(Date.now());
+
+    users.find(user => user.user === sessionStorage.getItem("logged_user")).orders += 1;
+    updateUsers(users);
 }
 
 

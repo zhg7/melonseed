@@ -161,6 +161,11 @@ Este proyecto ha sido posible gracias a los trabajos de las siguientes personas 
     - Autor: unDraw (https://undraw.co/illustrations)
     - Licencia: https://undraw.co/license (Libre)
 
+• Pedido realizado
+    - Archivo: order-placed.svg
+    - Autor: unDraw (https://undraw.co/illustrations)
+    - Licencia: https://undraw.co/license (Libre)
+
 ** Iconos **
 • Logo del sitio: Sandía
     - Archivos: melon.svg, favicon.ico

@@ -36,8 +36,8 @@ function showCatalog(isFeatured) {
     let fruitsToShow = isFeatured ? featuredFruits : availableFruits;
     if (queryString !== "") {
         const matchedFruits = availableFruits.filter(item => normalizeString(item.fruit.toLowerCase()).includes(normalizeString(getSearchString())));
-        matchString.textContent = ` / Coincidencias para "${getSearchString()}"`
         if (matchedFruits.length > 0) {
+            matchString.textContent = ` / Coincidencias para "${getSearchString()}"`
             fruitsToShow = matchedFruits;
         }
     }

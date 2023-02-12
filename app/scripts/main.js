@@ -26,9 +26,11 @@ if (!location.href.includes("cart")) {
 if (currentUser !== null) {
     const sessionBtn = document.querySelector(".session")
     const usernameField = document.querySelector(".username");
+    const ordersField = document.getElementById("orders");
     sessionBtn.textContent = "Mi usuario";
     sessionBtn.setAttribute("data-bs-toggle", "dropdown");
     usernameField.textContent = currentUser;
+    ordersField.textContent = `(${JSON.parse(localStorage.getItem("users")).find(user => user.user === currentUser).orders})`
 }
 
 function updateUsers(users) {
