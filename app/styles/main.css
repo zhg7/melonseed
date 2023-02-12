@@ -1,3 +1,11 @@
+:root {
+    --main-color: #163a24;
+    --secondary-color: #198c36;
+    --pink: #fbc8b8;
+    --yellow: #f7bc28;
+    --white: #f2efe6;
+}
+
 html,
 body {
     font-family: 'Noto Sans', sans-serif;
@@ -11,12 +19,12 @@ nav,
 header,
 footer,
 .card {
-    background-color: #163a24;
+    background-color: var(--main-color);
 }
 
 
 .content {
-    background-color: #f2efe6;
+    background-color: var(--white);
 }
 
 .navbar-brand,
@@ -41,12 +49,12 @@ button {
 }
 
 .pink-btn {
-    background: linear-gradient(to right, #fab5a0 50%, #fbc8b8 50%);
+    background: linear-gradient(to right, #fab5a0 50%, var(--pink) 50%);
     color: #163a24;
 }
 
 .green-btn {
-    background: linear-gradient(to right, #15762e 50%, #198c36 50%);
+    background: linear-gradient(to right, #15762e 50%, var(--secondary-color) 50%);
     max-width: 10em;
 }
 
@@ -104,8 +112,8 @@ button {
 }
 
 .footer-bottom {
-    background-color: #fbfaf7;
-    color: #163a24;
+    background-color: var(--white);
+    color: var(--main-color);
 }
 
 .copyleft {
@@ -120,7 +128,7 @@ button {
 
 #map {
     height: calc(100vh - 200px);
-    border: 2px solid #163a24;
+    border: 2px solid var(--main-color);
 }
 
 @media screen and (min-width: 992px) {
@@ -132,7 +140,7 @@ button {
         height: 3px;
         bottom: 6px;
         left: 0;
-        background-color: #f7bc28;
+        background-color: var(--yellow);
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
     }
@@ -263,7 +271,7 @@ button {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: #163a24;
+    background-color: var(--main-color);
     z-index: 9999;
     animation: loading .75s ease-in-out forwards;
 }
