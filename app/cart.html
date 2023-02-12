@@ -114,17 +114,21 @@
                     Enlaces de interés
                 </h5>
                 <p>
-                    <i class="bi bi-flag-fill"> </i><a href="tos.html#legal" target="_blank" class="text-reset">Aviso legal</a>
+                    <i class="bi bi-flag-fill"> </i><a href="tos.html#legal" target="_blank" class="text-reset">Aviso
+                        legal</a>
                 </p>
                 <p>
-                    <i class="bi bi-shield-lock-fill"> </i><a href="tos.html#privacy" target="_blank" class="text-reset">Política de
+                    <i class="bi bi-shield-lock-fill"> </i><a href="tos.html#privacy" target="_blank"
+                        class="text-reset">Política de
                         privacidad</a>
                 </p>
                 <p>
-                    <i class="bi bi-file-text-fill"> </i><a href="tos.html#terms" target="_blank" class="text-reset">Términos de uso</a>
+                    <i class="bi bi-file-text-fill"> </i><a href="tos.html#terms" target="_blank"
+                        class="text-reset">Términos de uso</a>
                 </p>
                 <p>
-                    <i class="bi bi-bag-fill"></i> <a href="tos.html#conditions" target="_blank" class="text-reset">Condiciones de
+                    <i class="bi bi-bag-fill"></i> <a href="tos.html#conditions" target="_blank"
+                        class="text-reset">Condiciones de
                         venta</a>
                 </p>
             </div>
@@ -147,6 +151,29 @@
             <a class="text-reset fw-bold" href="../attributions.txt" target="_blank">Atribuciones</a>
         </div>
     </footer>
+    <!--Modal de compra-->
+    <div class="modal fade" id="placeOrderModal" tabindex="-1" aria-labelledby="placeOrderLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="placeOrderLabel">Pedido realizado</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-3 text-center">¡Gracias por tu pedido!</p>
+                    <img src="assets/images/illustrations/order-placed.svg" alt="" class="img-fluid mb-3">
+                    <p class="text-start">Número de pedido: <b><span id="order-id"></span></b></p>
+                    <p class="text-start">Importe total: <b><span id="order-total"></span></b></p>
+                    <p class="text-start">Fecha: <b><span id="order-date"></span></b></p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button type="button" class="green-btn text-light rounded-pill px-3" data-bs-dismiss="modal">De
+                            acuerdo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Toast de consentimiento de cookies-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast cookie" role="alert" aria-live="assertive" aria-atomic="true">

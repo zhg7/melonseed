@@ -96,10 +96,12 @@ function showCartItems() {
                 </div>
                 <p class="fs-4" id="total">Total: <span></span></p>
                 <button type="button"
-                    class="text-light rounded-pill green-btn text-center p-4 d-flex align-items-center justify-content-center">Comprar</button>
+                    class="text-light rounded-pill green-btn text-center p-4 d-flex align-items-center justify-content-center order-btn" data-bs-toggle="modal"
+                    data-bs-target="#placeOrderModal">Comprar</button>
             </div>
         </div>
     </div>`);
+        document.querySelector(".order-btn").addEventListener("click", placeOrder);
         cartContent.querySelector(".empty-btn").addEventListener("click", emptyCart);
     } else {    // Esconder esta sección cuando el carrito está vacío.
         if (isCartEmpty()) {
@@ -187,6 +189,15 @@ function calculateTotals() {
     const vat = subtotal * 1.04 - subtotal;
     vatField.firstElementChild.textContent = formatCurrency(vat);
     totalField.firstElementChild.textContent = formatCurrency(subtotal + vat);
+}
+
+function placeOrder() {
+    const orderIdField = document.getElementById("order-id");
+    const orderTotalField = document.getElementById("order-total");
+    const orderDateField = document.getElementById("order-date");
+    orderIdField.textContent = crypto.getRandomValues(new Uint32Array(1));
+    orderTotalField.textContent = document.getElementById("total").firstElementChild.textContent;
+    orderDateField.textContent = new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'short' }).format(Date.now())
 }
 
 
