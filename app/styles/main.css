@@ -42,6 +42,10 @@ h5,
     cursor: pointer;
 }
 
+.badge {
+    background-color: var(--yellow);
+}
+
 button {
     border: none;
     height: 2.5em;

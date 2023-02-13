@@ -101,6 +101,25 @@ function getMicrophonePermission() {
         })
 }
 
+// Contador de frutas
+function updateCartCounter() {
+    const users = JSON.parse(localStorage.getItem("users"));
+    const userCart = users.find(user => user.user === currentUser).cart;
+    const fruitCounter = document.getElementById("fruit-count");
+    if (userCart.length > 0) {
+        fruitCounter.classList.remove("d-none");
+        fruitCounter.textContent = userCart.length;
+    } else {
+        fruitCounter.classList.add("d-none");
+    }
+
+}
+
+if (currentUser !== null) {
+    updateCartCounter();
+}
+
+
 
 
 

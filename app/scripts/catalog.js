@@ -163,6 +163,7 @@ function addToCart(fruit) {
         });
     }
     updateUsers(users);
+    updateCartCounter();
 }
 
 function getSearchString() {

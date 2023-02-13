@@ -156,6 +156,7 @@ function removeItem(e) {
     }
 
     updateUsers(users);
+    updateCartCounter();
 }
 
 function emptyCart() {

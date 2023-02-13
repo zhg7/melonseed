@@ -60,8 +60,15 @@
                         </div>
                     </li>
                     <li class="nav-item mx-2">
-                        <a href="cart.html" class="nav-link text-light rounded-pill green-btn text-center px-4"
-                            id="cart-btn">Carrito</a>
+                        <a href="/app/cart.html"
+                            class="nav-link text-light rounded-pill green-btn text-center px-4 position-relative"
+                            id="cart-btn">Carrito
+                            <span
+                                class="position-absolute top-1 start-100 translate-middle badge rounded-pill text-black d-none"
+                                id="fruit-count">
+                                <span class="visually-hidden">Cantidad de frutas diferentes en el carrito.</span>
+                            </span>
+                        </a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
