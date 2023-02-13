@@ -48,6 +48,11 @@ button {
     font-weight: 600;
 }
 
+button:active,
+.green-btn:active {
+    transform: scale(.9);
+}
+
 .pink-btn {
     background: linear-gradient(to right, #fab5a0 50%, var(--pink) 50%);
     color: #163a24;
@@ -77,7 +82,8 @@ button {
 }
 
 
-.form-control:focus, .btn-close:focus  {
+.form-control:focus,
+.btn-close:focus {
     border-color: var(--secondary-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(25, 140, 54, 0.5);
 }
@@ -167,10 +173,6 @@ button {
     position: relative;
     transition: .3s ease-in-out;
     overflow: hidden;
-}
-
-.add-btn:active {
-    transform: scale(.9);
 }
 
 .add-btn .bi-cart-fill {
