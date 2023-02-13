@@ -59,6 +59,7 @@ function sendSearchQuery() {
 // Reconocimiento de voz
 const micBtn = document.querySelector(".mic-btn");
 if (navigator.userAgent.includes("Chrome")) {     // No funciona en Firefox, por el momento.
+    getMicrophonePermission();
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.lang = 'es-ES';
@@ -91,6 +92,16 @@ function destroySession() {
     sessionStorage.clear();
     location.reload();
 }
+
+function getMicrophonePermission() {
+    navigator.mediaDevices
+        .getUserMedia({ video: false, audio: true })
+        .then((stream) => {
+            window.getLocalStream = stream;
+        })
+}
+
+
 
 
 
