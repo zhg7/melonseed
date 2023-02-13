@@ -162,6 +162,7 @@ function addToCart(fruit) {
             "quantity": 1
         });
     }
+    new Audio('/app/assets/audio/pop.wav').play();
     updateUsers(users);
     updateCartCounter();
 }

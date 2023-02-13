@@ -202,6 +202,12 @@ Este proyecto ha sido posible gracias a los trabajos de las siguientes personas 
     - Autor: Zhenghang Cai (grabado por mi)
     - Licencia: Lo libero al dominio público
 
+• Sonido de burbuja al añadir fruta
+    - Archivo: pop.wav
+    - Autor: EverHeat
+    - Enlace: https://freesound.org/people/EverHeat/sounds/205542/
+    - Licencia: CC BY 3.0 ES
+
 ## Otros ##
 
 • Descripciones de las frutas

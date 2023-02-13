@@ -154,7 +154,6 @@ function removeItem(e) {
     } else {
         calculateTotals();
     }
-
     updateUsers(users);
     updateCartCounter();
 }
