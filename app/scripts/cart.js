@@ -202,6 +202,7 @@ function placeOrder() {
 
     users.find(user => user.user === sessionStorage.getItem("logged_user")).orders += 1;
     updateUsers(users);
+    updateOrderCounter();
 }
 
 
