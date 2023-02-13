@@ -48,7 +48,7 @@ button {
     font-weight: 600;
 }
 
-button:active,
+button:active:not(.mic-btn),
 .green-btn:active {
     transform: scale(.9);
 }
