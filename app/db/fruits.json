@@ -4,174 +4,174 @@
 	"binomial" : "Malus domestica",
         "price": 2.59,
         "origin": ["it","fr", "be"],
-        "image": "apples.jpg"
+        "image": "apples.webp"
     },
     {
         "fruit": "Aguacates",
 	"binomial" : "Persea americana",
         "price": 6.49,
         "origin": ["mx", "us", "id"],
-        "image": "avocados.jpg"
+        "image": "avocados.webp"
     },
     {
         "fruit": "Mandarinas",
 	"binomial" : "Citrus reticulata",
         "price": 1.62,
         "origin": ["es", "pe", "tr"],
-        "image": "tangerines.jpg"
+        "image": "tangerines.webp"
     },
     {
         "fruit": "Plátanos",
 	"binomial" : "Musa × paradisiaca",
         "price": 2.15,
         "origin": ["in", "ec", "br"],
-        "image": "bananas.jpg"
+        "image": "bananas.webp"
     },
     {
         "fruit": "Arándanos",
 	"binomial" : "Vaccinium myrtillus",
         "price": 11.18,
         "origin": ["us", "ca", "lv"],
-        "image": "blueberries.jpg"
+        "image": "blueberries.webp"
     },
     {
         "fruit": "Moras",
 	"binomial" : "Morus alba",
         "price": 14.20,
         "origin": ["pt", "us", "es"],
-        "image": "blackberries.jpg"
+        "image": "blackberries.webp"
     },
     {
         "fruit": "Carambolas",
 	"binomial" : "Averrhoa carambola",
         "price": 19.18,
         "origin": ["my", "th", "id"],
-        "image": "carambolas.jpg"
+        "image": "carambolas.webp"
     },
     {
         "fruit": "Cerezas",
 	"binomial" : "Prunus cerasus",
         "price": 9.18,
         "origin": ["ir", "us", "tr"],
-        "image": "cherries.jpg"
+        "image": "cherries.webp"
     },
     {
         "fruit": "Cocos",
 	"binomial" : "Cocos nucifera",
         "price": 14.18,
         "origin": ["id", "in", "ph"],
-        "image": "coconuts.jpg"
+        "image": "coconuts.webp"
     },
     {
         "fruit": "Kiwis",
 	"binomial" : "Actinidia deliciosa",
         "price": 3.54,
         "origin": ["ir", "nz", "fr"],
-        "image": "kiwis.jpg"
+        "image": "kiwis.webp"
     },
     {
         "fruit": "Pitahayas",
 	"binomial" : "Hylocereus undatus",
         "price": 14.23,
         "origin": ["cn", "kr", "th"],
-        "image": "dragonfruits.jpg"
+        "image": "dragonfruits.webp"
     },
     {
         "fruit": "Higos",
 	"binomial" : "Ficus carica",
         "price": 8.59,
         "origin": ["tr", "ir", "eg"],
-        "image": "figs.jpg"
+        "image": "figs.webp"
     },
     {
         "fruit": "Limones",
 	"binomial": "Citrus × limon",
         "price": 2.11,
         "origin": ["es", "ar", "mx"],
-        "image": "lemons.jpg"
+        "image": "lemons.webp"
     },
     {
         "fruit": "Lichis",
 	"binomial" : "Litchi chinensis",
         "price": 11.12,
         "origin": ["ph", "in", "cn"],
-        "image": "lychees.jpg"
+        "image": "lychees.webp"
     },
     {
         "fruit": "Mangos",
 	"binomial" : "Mangifera indica",
         "price": 3.95,
         "origin": ["in", "cn", "ng"],
-        "image": "mangos.jpg"
+        "image": "mangos.webp"
     },
     {
         "fruit": "Naranjas",
 	"binomial" : "Citrus × sinensis",
         "price": 1.89,
         "origin": ["es", "br", "us"],
-        "image": "oranges.jpg"
+        "image": "oranges.webp"
     },
     {
         "fruit": "Papayas",
 	"binomial" : "Carica papaya",
         "price": 4.79,
         "origin": ["br", "ng", "pe"],
-        "image": "papayas.jpg"
+        "image": "papayas.webp"
     },
     {
         "fruit": "Melocotones",
 	"binomial" : "Prunus persica",
         "price": 2.59,
         "origin": ["es", "gr", "us"],
-        "image": "peaches.jpg"
+        "image": "peaches.webp"
     },
     {
         "fruit": "Peras",
 	"binomial" : "Pyrus communis",
         "price": 1.78,
         "origin": ["it", "es", "il"],
-        "image": "pears.jpg"
+        "image": "pears.webp"
     },
     {
         "fruit": "Piñas",
 	"binomial" : "Ananas comosus",
         "price": 4.95,
         "origin": ["th", "ph", "co"],
-        "image": "pineapples.jpg"
+        "image": "pineapples.webp"
     },
     {
         "fruit": "Ciruelas",
 	"binomial" : "Prunus domestica",
         "price": 1.99,
         "origin": ["es", "cn", "ma"],
-        "image": "plums.jpg"
+        "image": "plums.webp"
     },
     {
         "fruit": "Granadas",
 	"binomial" : "Punica granatum",
         "price": 3.89,
         "origin": ["in", "ir", "bd"],
-        "image": "pomegranates.jpg"
+        "image": "pomegranates.webp"
     },
     {
         "fruit": "Frambuesas",
 	"binomial" : "Rubus idaeus",
         "price": 12.29,
         "origin": ["ru", "pl", "ua"],
-        "image": "raspberries.jpg"
+        "image": "raspberries.webp"
     },
     {
         "fruit": "Fresas",
 	"binomial" : "Fragaria",
         "price": 3.20,
         "origin": ["es", "fr", "nl"],
-        "image": "strawberries.jpg"
+        "image": "strawberries.webp"
     },
     {
         "fruit": "Sandías",
 	"binomial" : "Citrullus lanatus",
         "price": 1.45,
         "origin": ["es", "cn", "tr"],
-        "image": "watermelons.jpg"
+        "image": "watermelons.webp"
     }
 ]
