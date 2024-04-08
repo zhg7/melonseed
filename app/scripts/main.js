@@ -1,14 +1,5 @@
 "use strict";
 
-// Alertar al usuario sobre la privacidad de la web, ya que pide permisos de micrófono y geolocalización.
-if (localStorage.getItem("alertDismissed") === null) {
-    const alertDismissed = confirm("Este sitio web no envía datos a servidores externos. ¡Disfruta de tu visita!");
-
-    if (alertDismissed) {
-        localStorage.setItem("alertDismissed", true);
-    }
-}
-
 // Evitar acceso al carrito sin sesión.
 const currentUser = sessionStorage.getItem("logged_user");
 
